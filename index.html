@@ -112,7 +112,7 @@ body {
 }
 .gate-nav-header {
   display: flex; justify-content: space-between;
-  align-items: center; padding: 16px 24px;
+  align-items: center; padding: 16px 24px 16px 64px;
   background: #1a1f2e;
   border-bottom: 1px solid #2a3040;
   position: sticky; top: 0; z-index: 100;
@@ -136,6 +136,27 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+/* Override all internal nav bars inside gates:
+   - Remove fixed/sticky positioning (conflicts with master nav)
+   - Force light readable backgrounds */
+.gate-body nav {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  background: rgba(245,240,232,0.97) !important;
+  backdrop-filter: blur(8px);
+  color: #2c2c2c !important;
+  border-bottom: 1px solid #d4cfc5 !important;
+}
+.gate-body nav a {
+  color: #555 !important;
+}
+.gate-body nav a:hover,
+.gate-body nav a.active {
+  color: #8b7332 !important;
 }
 
 /* Sidebar */
@@ -480,8 +501,8 @@ body {
 /* ── 第二門 觀有果無果門 ── */
 .g-gate02 * { margin: 0; padding: 0; box-sizing: border-box; }
 .g-gate02 {
-    background: #0d1117;
-    color: #e6edf3;
+    background: #f5f0e6;
+    color: #2c2c2c;
     font-family: 'Noto Sans TC', sans-serif;
     line-height: 1.8;
     font-size: 16px;
@@ -495,9 +516,9 @@ body {
     text-align: center;
     overflow: hidden;
     background:
-      radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 70% 50%, rgba(88,166,255,0.05) 0%, transparent 60%),
-      #0d1117;
+      radial-gradient(ellipse at 30% 50%, rgba(160,123,40,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 50%, rgba(37,99,235,0.04) 0%, transparent 60%),
+      #f5f0e6;
   }
 .g-gate02 .hero::before {
     content: '';
@@ -513,7 +534,7 @@ body {
     font-family: 'Noto Serif TC', serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 900;
-    color: #ffffff;
+    color: #1a1a1a;
     letter-spacing: 0.08em;
     margin-bottom: 0.5rem;
     animation: g-gate02-fadeUp 1s ease-out;
@@ -521,25 +542,25 @@ body {
 .g-gate02 .hero h2 {
     font-family: 'Noto Serif TC', serif;
     font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: #c9a84c;
+    color: #a07b28;
     font-weight: 600;
     margin-bottom: 1.5rem;
     animation: g-gate02-fadeUp 1s ease-out 0.2s both;
   }
 .g-gate02 .hero p {
-    color: #8b949e;
+    color: #666666;
     font-size: 1rem;
     animation: g-gate02-fadeUp 1s ease-out 0.4s both;
   }
 .g-gate02 .verse-hero {
     font-family: 'Noto Serif TC', serif;
     font-size: clamp(1.5rem, 4vw, 2.2rem);
-    color: #ffffff;
+    color: #1a1a1a;
     line-height: 2;
     margin: 2rem auto;
     max-width: 600px;
     padding: 2rem;
-    border: 1px solid #30363d;
+    border: 1px solid #d4cfc5;
     position: relative;
     animation: g-gate02-fadeUp 1s ease-out 0.6s both;
   }
@@ -548,7 +569,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    border-color: #c9a84c;
+    border-color: #a07b28;
   }
 .g-gate02 .verse-hero::before { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
 .g-gate02 .verse-hero::after { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
@@ -562,7 +583,7 @@ body {
     z-index: 100;
     background: rgba(13,17,23,0.95);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #d4cfc5;
     padding: 0.8rem 0;
     display: flex;
     justify-content: center;
@@ -570,7 +591,7 @@ body {
     flex-wrap: wrap;
   }
 .g-gate02 .toc a {
-    color: #8b949e;
+    color: #666666;
     text-decoration: none;
     font-size: 0.85rem;
     padding: 0.4rem 1rem;
@@ -579,9 +600,9 @@ body {
     border: 1px solid transparent;
   }
 .g-gate02 .toc a:hover {
-    color: #c9a84c;
+    color: #a07b28;
     border-color: #8b7332;
-    background: rgba(201,168,76,0.08);
+    background: rgba(160,123,40,0.06);
   }
 .g-gate02 .container {
     max-width: 960px;
@@ -590,13 +611,13 @@ body {
   }
 .g-gate02 section {
     padding: 4rem 0;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #d4cfc5;
   }
 .g-gate02 .section-label {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: #c9a84c;
+    color: #a07b28;
     margin-bottom: 0.5rem;
     font-weight: 500;
   }
@@ -604,36 +625,36 @@ body {
     font-family: 'Noto Serif TC', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 1.5rem;
   }
 .g-gate02 h4 {
     font-family: 'Noto Serif TC', serif;
     font-size: 1.3rem;
     font-weight: 600;
-    color: #c9a84c;
+    color: #a07b28;
     margin: 2rem 0 1rem;
     padding-left: 1rem;
-    border-left: 3px solid #c9a84c;
+    border-left: 3px solid #a07b28;
   }
 .g-gate02 h5 {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #58a6ff;
+    color: #2563eb;
     margin: 1.5rem 0 0.8rem;
   }
 .g-gate02 .card {
-    background: #161b22;
-    border: 1px solid #30363d;
+    background: #ffffff;
+    border: 1px solid #d4cfc5;
     border-radius: 8px;
     padding: 2rem;
     margin: 1.5rem 0;
     transition: border-color 0.3s;
   }
 .g-gate02 .card:hover { border-color: #8b7332; }
-.g-gate02 .card-red { border-left: 3px solid #e74c3c; }
-.g-gate02 .card-gold { border-left: 3px solid #c9a84c; }
-.g-gate02 .card-cyan { border-left: 3px solid #58a6ff; }
+.g-gate02 .card-red { border-left: 3px solid #dc2626; }
+.g-gate02 .card-gold { border-left: 3px solid #a07b28; }
+.g-gate02 .card-cyan { border-left: 3px solid #2563eb; }
 .g-gate02 .mindmap-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -644,8 +665,8 @@ body {
   .g-gate02 .mindmap-grid { grid-template-columns: 1fr; }
 }
 .g-gate02 .mindmap-node {
-    background: #1c2333;
-    border: 1px solid #30363d;
+    background: #f8f5ef;
+    border: 1px solid #d4cfc5;
     border-radius: 8px;
     padding: 1.5rem;
     position: relative;
@@ -655,10 +676,10 @@ body {
     position: absolute;
     top: -10px;
     left: 16px;
-    background: #0d1117;
+    background: #f5f0e6;
     padding: 0 8px;
     font-size: 0.7rem;
-    color: #c9a84c;
+    color: #a07b28;
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
@@ -669,14 +690,14 @@ body {
     border-radius: 3px;
     margin: 2px;
   }
-.g-gate02 .tag-red { background: rgba(231,76,60,0.15); color: #e74c3c; border: 1px solid #943126; }
-.g-gate02 .tag-gold { background: rgba(201,168,76,0.12); color: #c9a84c; border: 1px solid #8b7332; }
-.g-gate02 .tag-green { background: rgba(63,185,80,0.12); color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+.g-gate02 .tag-red { background: rgba(231,76,60,0.15); color: #dc2626; border: 1px solid #b91c1c; }
+.g-gate02 .tag-gold { background: rgba(201,168,76,0.12); color: #a07b28; border: 1px solid #8b7332; }
+.g-gate02 .tag-green { background: rgba(63,185,80,0.12); color: #16a34a; border: 1px solid rgba(63,185,80,0.3); }
 .g-gate02 .classical-text {
     font-family: 'Noto Serif TC', serif;
     font-size: 1.05rem;
     line-height: 2.2;
-    color: #e6edf3;
+    color: #2c2c2c;
     text-align: justify;
   }
 .g-gate02 .classical-text p {
@@ -687,22 +708,22 @@ body {
     text-indent: 0;
     text-align: center;
     font-size: 1.15rem;
-    color: #ffffff;
+    color: #1a1a1a;
     padding: 1rem 0;
     margin: 1rem 0;
-    border-top: 1px solid #30363d;
-    border-bottom: 1px solid #30363d;
+    border-top: 1px solid #d4cfc5;
+    border-bottom: 1px solid #d4cfc5;
   }
-.g-gate02 .classical-text .question { color: #58a6ff; }
-.g-gate02 .classical-text .answer { color: #e6edf3; }
+.g-gate02 .classical-text .question { color: #2563eb; }
+.g-gate02 .classical-text .answer { color: #2c2c2c; }
 .g-gate02 .highlight-quote {
     font-family: 'Noto Serif TC', serif;
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #1a1a1a;
     padding: 1.2rem 1.5rem;
     margin: 1.5rem 0;
-    background: rgba(201,168,76,0.06);
-    border-left: 3px solid #c9a84c;
+    background: rgba(160,123,40,0.04);
+    border-left: 3px solid #a07b28;
     border-radius: 0 6px 6px 0;
   }
 .g-gate02 .matrix-table {
@@ -712,20 +733,20 @@ body {
     font-size: 0.9rem;
   }
 .g-gate02 .matrix-table th {
-    background: #1c2333;
-    color: #c9a84c;
+    background: #f8f5ef;
+    color: #a07b28;
     padding: 12px 16px;
     text-align: center;
-    border: 1px solid #30363d;
+    border: 1px solid #d4cfc5;
     font-weight: 600;
   }
 .g-gate02 .matrix-table td {
     padding: 12px 16px;
     text-align: center;
-    border: 1px solid #30363d;
-    background: #161b22;
+    border: 1px solid #d4cfc5;
+    background: #ffffff;
   }
-.g-gate02 .matrix-table tr:hover td { background: #1c2333; }
+.g-gate02 .matrix-table tr:hover td { background: #f8f5ef; }
 .g-gate02 .flow {
     display: flex;
     align-items: center;
@@ -736,22 +757,22 @@ body {
     font-size: 0.95rem;
   }
 .g-gate02 .flow-box {
-    background: #1c2333;
-    border: 1px solid #30363d;
+    background: #f8f5ef;
+    border: 1px solid #d4cfc5;
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     font-weight: 500;
   }
-.g-gate02 .flow-arrow { color: #c9a84c; font-size: 1.4rem; }
+.g-gate02 .flow-arrow { color: #a07b28; font-size: 1.4rem; }
 .g-gate02 .flow-box.destroyed {
-    border-color: #943126;
-    color: #e74c3c;
+    border-color: #b91c1c;
+    color: #dc2626;
     text-decoration: line-through;
     opacity: 0.7;
   }
 .g-gate02 details {
-    background: #161b22;
-    border: 1px solid #30363d;
+    background: #ffffff;
+    border: 1px solid #d4cfc5;
     border-radius: 8px;
     margin: 1rem 0;
     overflow: hidden;
@@ -760,7 +781,7 @@ body {
     padding: 1rem 1.5rem;
     cursor: pointer;
     font-weight: 600;
-    color: #ffffff;
+    color: #1a1a1a;
     list-style: none;
     display: flex;
     align-items: center;
@@ -768,25 +789,25 @@ body {
   }
 .g-gate02 details summary::before {
     content: '▸';
-    color: #c9a84c;
+    color: #a07b28;
     transition: transform 0.3s;
     display: inline-block;
   }
 .g-gate02 details[open] summary::before { transform: rotate(90deg); }
 .g-gate02 details .detail-content {
     padding: 0 1.5rem 1.5rem;
-    color: #8b949e;
+    color: #666666;
     line-height: 1.9;
   }
 .g-gate02 footer {
     text-align: center;
     padding: 3rem 1.5rem;
-    color: #8b949e;
+    color: #666666;
     font-size: 0.85rem;
   }
 .g-gate02 ::-webkit-scrollbar { width: 6px; }
-.g-gate02 ::-webkit-scrollbar-track { background: #0d1117; }
-.g-gate02 ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+.g-gate02 ::-webkit-scrollbar-track { background: #f5f0e6; }
+.g-gate02 ::-webkit-scrollbar-thumb { background: #d4cfc5; border-radius: 3px; }
 @media (max-width: 600px) {
   .g-gate02 .toc { gap: 0.2rem; }
   .g-gate02 .toc a { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
@@ -1473,19 +1494,21 @@ body {
   }
 .g-gate05 p { margin-bottom: 16px; text-align: justify; }
 .g-gate05 .source-text {
-    background: #e8e5df;
-    border-left: 4px solid #8b6914;
-    padding: 20px 24px;
+    background: #faf8f4;
+    border-left: 4px solid #b8952a;
+    padding: 18px 24px;
     margin: 20px 0;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 8px 8px 0;
+    font-family: 'Noto Serif TC', serif;
     font-size: 0.98em;
+    line-height: 2;
+    color: #555;
   }
 .g-gate05 .source-text .label {
     font-weight: bold;
-    color: #8b6914;
+    color: #b8952a;
     margin-bottom: 8px;
-    font-size: 0.9em;
-    text-transform: uppercase;
+    font-size: 0.88em;
     letter-spacing: 0.05em;
   }
 .g-gate05 .verse {
@@ -1521,13 +1544,28 @@ body {
   }
 .g-gate05 .card p { font-size: 0.95em; margin-bottom: 8px; }
 .g-gate05 .highlight-box {
-    background: #1a2744;
-    color: #f0eeea;
-    padding: 24px 28px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #f0fafa, #fafaf0);
+    border: 1px solid #1ab5b0;
+    color: #2c2c2c;
+    padding: 20px 24px;
+    border-radius: 10px;
     margin: 24px 0;
+    position: relative;
   }
-.g-gate05 .highlight-box strong { color: #8b6914; }
+.g-gate05 .highlight-box::before {
+    content: "重點";
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: #1ab5b0;
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
+  }
+.g-gate05 .highlight-box strong { color: #b8952a; font-weight: 600; }
 .g-gate05 .logic-flow {
     display: flex;
     align-items: center;
@@ -1615,13 +1653,27 @@ body {
 .g-gate05 .domino:first-child { transform: rotate(-12deg); background: #b8312f; }
 .g-gate05 .cascade-arrow { color: #8b6914; font-size: 1.2em; }
 .g-gate05 .note-box {
-    background: #fdf8ed;
-    border: 1px dashed #8b6914;
+    background: #fffdf5;
+    border: 1px dashed #b8952a;
     padding: 20px 24px;
-    border-radius: 8px;
+    border-radius: 10px;
     margin: 24px 0;
+    position: relative;
   }
-.g-gate05 .note-box h4 { color: #8b6914; margin-bottom: 8px; }
+.g-gate05 .note-box::before {
+    content: "筆記";
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: #b8952a;
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
+  }
+.g-gate05 .note-box h4 { color: #b8952a; margin-bottom: 8px; }
 .g-gate05 footer {
     text-align: center;
     padding: 40px 0 20px;
@@ -1745,13 +1797,14 @@ body {
   }
 .g-gate06 .original-quote {
     background: #faf8f4;
-    border: 1px solid #d8d2c6;
-    border-left: 4px solid #c4a97d;
+    border-left: 4px solid #b8952a;
     padding: 18px 24px;
     margin: 20px 0;
-    font-size: 0.95em;
-    color: #5a5a5a;
-    border-radius: 0 6px 6px 0;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.98em;
+    line-height: 2;
+    color: #555;
+    border-radius: 0 8px 8px 0;
     position: relative;
   }
 .g-gate06 .original-quote::before {
@@ -1759,11 +1812,13 @@ body {
     position: absolute;
     top: -10px;
     left: 16px;
-    background: #faf8f4;
-    padding: 0 8px;
-    font-size: 0.75em;
-    color: #8b7355;
-    font-weight: 600;
+    background: #b8952a;
+    color: #fff;
+    padding: 2px 12px;
+    font-size: 0.78em;
+    font-weight: bold;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
     font-family: 'Noto Sans TC', sans-serif;
   }
 .g-gate06 .card {
@@ -1781,8 +1836,22 @@ body {
     border-left: 4px solid #b5453a;
   }
 .g-gate06 .card.insight {
-    border-left: 4px solid #8b7355;
-    background: linear-gradient(135deg, #fdfcfa, #f8f5ef);
+    border: 1px solid #1ab5b0;
+    background: linear-gradient(135deg, #f0fafa, #fafaf0);
+    position: relative;
+  }
+.g-gate06 .card.insight::before {
+    content: '解析';
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: #1ab5b0;
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
   }
 .g-gate06 .card-label {
     font-family: 'Noto Sans TC', sans-serif;
@@ -1891,13 +1960,27 @@ body {
     text-align: center;
     font-size: 1.2em;
     font-weight: 700;
-    color: #6b5640;
-    padding: 20px;
+    color: #b8952a;
+    padding: 24px;
     margin: 24px 0;
-    border: 2px solid #c4a97d;
-    border-radius: 8px;
-    background: #faf8f4;
+    border: 1px solid #1ab5b0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f0fafa, #fafaf0);
     letter-spacing: 0.04em;
+    position: relative;
+  }
+.g-gate06 .key-quote::before {
+    content: '重點';
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: #1ab5b0;
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
   }
 .g-gate06 .flow-arrow {
     text-align: center;
@@ -2397,18 +2480,21 @@ body {
     text-align: justify;
   }
 .g-gate08 blockquote {
-    background: #eae6dd;
-    border-left: 4px solid #a68b5b;
-    padding: 1.2rem 1.5rem;
+    background: #faf8f4;
+    border-left: 4px solid #b8952a;
+    padding: 18px 24px;
     margin: 1.5rem 0;
-    font-size: 1rem;
-    line-height: 2.2;
-    color: #3a3530;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.98em;
+    line-height: 2;
+    color: #555;
+    border-radius: 0 8px 8px 0;
   }
 .g-gate08 blockquote.verse {
     text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
+    color: #555;
   }
 .g-gate08 .logic-flow {
     display: flex;
@@ -2468,18 +2554,48 @@ body {
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
 .g-gate08 .card.warning {
-    border-left: 5px solid #9b4e2e;
+    border: 1px solid #1ab5b0;
+    background: linear-gradient(135deg, #f0fafa, #fafaf0);
+    position: relative;
+  }
+.g-gate08 .card.warning::before {
+    content: '重點';
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: #1ab5b0;
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
   }
 .g-gate08 .card.insight {
-    border-left: 5px solid #4a6274;
+    border: 1px solid #1ab5b0;
+    background: linear-gradient(135deg, #f0fafa, #fafaf0);
+    position: relative;
+  }
+.g-gate08 .card.insight::before {
+    content: '解析';
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: #1ab5b0;
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
   }
 .g-gate08 .card .card-title {
     font-weight: 700;
-    color: #9b4e2e;
+    color: #b8952a;
     margin-bottom: 0.5rem;
     font-size: 1.05rem;
   }
-.g-gate08 .card.insight .card-title { color: #4a6274; }
+.g-gate08 .card.insight .card-title { color: #0d8a86; }
 .g-gate08 .divider {
     border: none;
     border-top: 1px solid #c8c0b4;
@@ -3371,39 +3487,39 @@ body {
 .g-gate12 * { margin: 0; padding: 0; box-sizing: border-box; }
 .g-gate12 {
       font-family: "Noto Serif TC", "Source Han Serif TC", "PMingLiU", Georgia, serif;
-      background: #2a3040;
-      color: #e8e4dc;
+      background: #f5f0e6;
+      color: #2c2c2c;
       line-height: 1.9;
       font-size: 17px;
     }
 .g-gate12 header {
       text-align: center;
       padding: 80px 20px 60px;
-      background: linear-gradient(180deg, #1a1f2a 0%, #2a3040 100%);
-      border-bottom: 2px solid #c9a84c;
+      background: linear-gradient(180deg, #1a1f2a 0%, #f5f0e6 100%);
+      border-bottom: 2px solid #8b7332;
     }
 .g-gate12 header h1 {
       font-size: 3em;
-      color: #f0e8d8;
+      color: #a07b28;
       letter-spacing: 0.15em;
       margin-bottom: 16px;
       font-weight: 700;
     }
-.g-gate12 header h1 span { color: #c9a84c; }
+.g-gate12 header h1 span { color: #8b7332; }
 .g-gate12 header .subtitle {
       font-size: 1.15em;
-      color: #e2ca7e;
+      color: #a07b28;
       margin-bottom: 10px;
     }
 .g-gate12 header .meta {
       font-size: 0.9em;
-      color: #b8b4ac;
+      color: #666666;
     }
 .g-gate12 nav.toc {
       max-width: 780px;
       margin: -30px auto 40px;
-      background: #333a4a;
-      border: 1px solid #555e70;
+      background: #ffffff;
+      border: 1px solid #d4cfc5;
       border-radius: 8px;
       padding: 28px 36px;
       position: relative;
@@ -3411,7 +3527,7 @@ body {
     }
 .g-gate12 nav.toc h2 {
       font-size: 1.1em;
-      color: #c9a84c;
+      color: #8b7332;
       margin-bottom: 14px;
       letter-spacing: 0.1em;
     }
@@ -3422,11 +3538,11 @@ body {
       margin-bottom: 6px;
     }
 .g-gate12 nav.toc a {
-      color: #e8e4dc;
+      color: #2c2c2c;
       text-decoration: none;
       transition: color 0.2s;
     }
-.g-gate12 nav.toc a:hover { color: #c9a84c; }
+.g-gate12 nav.toc a:hover { color: #8b7332; }
 .g-gate12 main {
       max-width: 860px;
       margin: 0 auto;
@@ -3437,20 +3553,20 @@ body {
     }
 .g-gate12 h2.section-title {
       font-size: 1.7em;
-      color: #c9a84c;
-      border-left: 4px solid #c9a84c;
+      color: #8b7332;
+      border-left: 4px solid #8b7332;
       padding-left: 16px;
       margin-bottom: 24px;
       letter-spacing: 0.08em;
     }
 .g-gate12 h3 {
       font-size: 1.25em;
-      color: #f0e8d8;
+      color: #a07b28;
       margin: 28px 0 12px;
     }
 .g-gate12 h4 {
       font-size: 1.05em;
-      color: #e2ca7e;
+      color: #a07b28;
       margin: 20px 0 8px;
     }
 .g-gate12 p {
@@ -3458,44 +3574,79 @@ body {
       text-align: justify;
     }
 .g-gate12 .verse {
-      background: rgba(201, 168, 76, 0.08);
-      border: 1px solid #c9a84c;
-      border-radius: 6px;
+      background: #faf8f4;
+      border-left: 4px solid #b8952a;
+      border-radius: 0 8px 8px 0;
       padding: 24px 32px;
       margin: 24px 0;
       text-align: center;
-      font-size: 1.5em;
+      font-size: 1.3em;
       line-height: 2;
-      color: #f0e8d8;
-      letter-spacing: 0.12em;
+      color: #555;
+      letter-spacing: 0.1em;
+      font-family: 'Noto Serif TC', serif;
     }
 .g-gate12 .verse .note {
       display: block;
       font-size: 0.55em;
-      color: #e2ca7e;
+      color: #a07b28;
       margin-top: 12px;
       letter-spacing: 0.05em;
     }
 .g-gate12 .quote-box {
-      background: rgba(201, 168, 76, 0.06);
-      border-left: 3px solid #c9a84c;
-      padding: 16px 24px;
+      background: #faf8f4;
+      border-left: 4px solid #b8952a;
+      padding: 18px 24px;
       margin: 18px 0;
-      font-style: italic;
-      color: #b8b4ac;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.98em;
+      line-height: 2;
+      color: #555;
+      border-radius: 0 8px 8px 0;
+      font-style: normal;
     }
 .g-gate12 .card {
-      background: #333a4a;
-      border: 1px solid #555e70;
+      background: #ffffff;
+      border: 1px solid #d4cfc5;
       border-radius: 8px;
       padding: 24px 28px;
       margin: 20px 0;
     }
 .g-gate12 .card.highlight {
-      border-color: #c9a84c;
+      border: 1px solid #1ab5b0;
+      background: linear-gradient(135deg, #f0fafa, #fafaf0);
+      position: relative;
+    }
+.g-gate12 .card.highlight::before {
+      content: '解析';
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      background: #1ab5b0;
+      color: #fff;
+      font-size: 0.78em;
+      font-weight: bold;
+      padding: 2px 12px;
+      border-radius: 10px;
+      letter-spacing: 0.08em;
     }
 .g-gate12 .card.refute {
-      border-color: #c0392b;
+      border: 1px dashed #b8952a;
+      background: #fffdf5;
+      position: relative;
+    }
+.g-gate12 .card.refute::before {
+      content: '辨破';
+      position: absolute;
+      top: -11px;
+      left: 20px;
+      background: #b8952a;
+      color: #fff;
+      font-size: 0.78em;
+      font-weight: bold;
+      padding: 2px 12px;
+      border-radius: 10px;
+      letter-spacing: 0.08em;
     }
 .g-gate12 .card-label {
       display: inline-block;
@@ -3506,27 +3657,27 @@ body {
       margin-bottom: 10px;
       font-weight: 700;
     }
-.g-gate12 .card-label.gold { background: #c9a84c; color: #1a1f2a; }
+.g-gate12 .card-label.gold { background: #b8952a; color: #fff; }
 .g-gate12 .card-label.red { background: #c0392b; color: #fff; }
-.g-gate12 .card-label.teal { background: #5ba4a4; color: #fff; }
+.g-gate12 .card-label.teal { background: #1ab5b0; color: #fff; }
 .g-gate12 table {
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
     }
 .g-gate12 th, .g-gate12 td {
-      border: 1px solid #555e70;
+      border: 1px solid #d4cfc5;
       padding: 12px 16px;
       text-align: center;
       vertical-align: middle;
     }
 .g-gate12 th {
       background: rgba(201, 168, 76, 0.15);
-      color: #c9a84c;
+      color: #8b7332;
       font-weight: 600;
     }
-.g-gate12 td { color: #e8e4dc; }
-.g-gate12 .red-text { color: #e74c3c; font-weight: 700; font-size: 1.2em; }
+.g-gate12 td { color: #2c2c2c; }
+.g-gate12 .red-text { color: #dc2626; font-weight: 700; font-size: 1.2em; }
 .g-gate12 .flow {
       display: flex;
       flex-direction: column;
@@ -3535,8 +3686,8 @@ body {
       margin: 24px 0;
     }
 .g-gate12 .flow-item {
-      background: #333a4a;
-      border: 2px solid #555e70;
+      background: #ffffff;
+      border: 2px solid #d4cfc5;
       border-radius: 6px;
       padding: 12px 28px;
       text-align: center;
@@ -3562,8 +3713,8 @@ body {
       margin: 20px 0;
     }
 .g-gate12 .comparison > div {
-      background: #333a4a;
-      border: 1px solid #555e70;
+      background: #ffffff;
+      border: 1px solid #d4cfc5;
       border-radius: 6px;
       padding: 18px 22px;
     }
@@ -3572,7 +3723,7 @@ body {
     }
 .g-gate12 .original-text {
       background: rgba(0,0,0,0.25);
-      border: 1px solid #555e70;
+      border: 1px solid #d4cfc5;
       border-radius: 8px;
       padding: 28px 32px;
       margin: 20px 0;
@@ -3582,14 +3733,14 @@ body {
 .g-gate12 .original-text .footnote-ref {
       font-size: 0.75em;
       vertical-align: super;
-      color: #5ba4a4;
+      color: #2a7a7a;
       cursor: help;
     }
 .g-gate12 .footnotes {
       margin-top: 20px;
       font-size: 0.85em;
-      color: #b8b4ac;
-      border-top: 1px solid #555e70;
+      color: #666666;
+      border-top: 1px solid #d4cfc5;
       padding-top: 16px;
     }
 .g-gate12 .footnotes li {
@@ -3597,30 +3748,45 @@ body {
       margin-left: 20px;
     }
 .g-gate12 .conclusion-box {
-      background: linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.04) 100%);
-      border: 2px solid #c9a84c;
+      background: linear-gradient(135deg, #f0fafa, #fafaf0);
+      border: 2px solid #1ab5b0;
       border-radius: 10px;
       padding: 32px 36px;
       margin: 32px 0;
       text-align: center;
+      position: relative;
+    }
+.g-gate12 .conclusion-box::before {
+      content: '總結';
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1ab5b0;
+      color: #fff;
+      font-size: 0.78em;
+      font-weight: bold;
+      padding: 2px 16px;
+      border-radius: 10px;
+      letter-spacing: 0.08em;
     }
 .g-gate12 .conclusion-box p {
       font-size: 1.15em;
-      color: #f0e8d8;
+      color: #2c2c2c;
       text-align: center;
     }
 .g-gate12 .divider {
       text-align: center;
       margin: 48px 0;
-      color: #c9a84c;
+      color: #8b7332;
       letter-spacing: 0.6em;
       font-size: 0.9em;
     }
 .g-gate12 footer {
       text-align: center;
       padding: 40px 20px;
-      border-top: 1px solid #555e70;
-      color: #b8b4ac;
+      border-top: 1px solid #d4cfc5;
+      color: #666666;
       font-size: 0.85em;
     }
 @media (max-width: 640px) {
@@ -3691,7 +3857,7 @@ body {
         <span class="gate-label">第一門・觀因緣門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate01">
+      <div class="gate-body g-gate01" style="background:#f5f0e6; color:#2c2c2c;">
 <header>
     <h1>十二門論・觀因緣門第一</h1>
     <div class="subtitle">邏輯解構藍圖 — 深度演繹與空性矩陣</div>
@@ -4096,7 +4262,7 @@ body {
         <span class="gate-label">第二門・觀有果無果門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate02">
+      <div class="gate-body g-gate02" style="background:#f5f0e6; color:#2c2c2c;">
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
@@ -4109,7 +4275,7 @@ body {
       有無亦不生，<br>
       誰當有生者？
     </div>
-    <p style="color:#8b949e;font-size:0.85rem;">整合手寫筆記 ✦ 原典論文 ✦ 簡報解析</p>
+    <p style="color:#666666;font-size:0.85rem;">整合手寫筆記 ✦ 原典論文 ✦ 簡報解析</p>
   </div>
 </div>
 
@@ -4133,14 +4299,14 @@ body {
 
   <div class="mindmap-grid">
     <div class="mindmap-node" data-label="世俗諦 Saṃvṛti-satya">
-      <p style="font-weight:600;color:#3fb950;margin-bottom:0.5rem;">龍樹【不破】</p>
+      <p style="font-weight:600;color:#16a34a;margin-bottom:0.5rem;">龍樹【不破】</p>
       <p>條件相依，無固定實體。因果關係在世俗層面作為約定俗成的語言與經驗框架，龍樹並不否定其功能性運作。</p>
-      <p style="margin-top:0.8rem;font-size:0.85rem;color:#8b949e;">例：泥＋水＝瓶（外在因緣造作）</p>
+      <p style="margin-top:0.8rem;font-size:0.85rem;color:#666666;">例：泥＋水＝瓶（外在因緣造作）</p>
     </div>
     <div class="mindmap-node" data-label="勝義諦 Paramārtha-satya">
-      <p style="font-weight:600;color:#e74c3c;margin-bottom:0.5rem;">龍樹【破斥標的】</p>
+      <p style="font-weight:600;color:#dc2626;margin-bottom:0.5rem;">龍樹【破斥標的】</p>
       <p>預設定性因果，自性獨立。若將因與果視為絕對獨立、固定不變的「定性」（Svabhāva），則必然陷入邏輯死胡同。</p>
-      <p style="margin-top:0.8rem;font-size:0.85rem;color:#8b949e;">解構的是「實體化自性」的執著</p>
+      <p style="margin-top:0.8rem;font-size:0.85rem;color:#666666;">解構的是「實體化自性」的執著</p>
     </div>
   </div>
 
@@ -4155,7 +4321,7 @@ body {
 <div class="container">
   <div class="section-label">Handwritten Notes</div>
   <h3>筆記心智圖解讀</h3>
-  <p style="color:#8b949e;margin-bottom:1.5rem;">以下根據手寫筆記整理出的論證結構：</p>
+  <p style="color:#666666;margin-bottom:1.5rem;">以下根據手寫筆記整理出的論證結構：</p>
 
   <div class="card card-gold">
     <h5>果因緣的二諦分層</h5>
@@ -4197,10 +4363,10 @@ body {
 <div class="container">
   <div class="section-label">Tetralemma</div>
   <h3>四句推檢辯證全景</h3>
-  <p style="color:#8b949e;margin-bottom:1.5rem;">窮盡實體因果的三種邏輯可能性，並證明其皆導向自相矛盾。</p>
+  <p style="color:#666666;margin-bottom:1.5rem;">窮盡實體因果的三種邏輯可能性，並證明其皆導向自相矛盾。</p>
 
   <div class="flow">
-    <div class="flow-box" style="border-color:#c9a84c;">定性生法</div>
+    <div class="flow-box" style="border-color:#a07b28;">定性生法</div>
     <span class="flow-arrow">→</span>
     <div style="display:flex;flex-direction:column;gap:0.5rem;">
       <div class="flow-box destroyed">1. 因中先有果</div>
@@ -4208,7 +4374,7 @@ body {
       <div class="flow-box destroyed">3. 因中先有無果</div>
     </div>
     <span class="flow-arrow">→</span>
-    <div class="flow-box" style="border-color:#e74c3c;color:#e74c3c;font-weight:700;">皆不成立</div>
+    <div class="flow-box" style="border-color:#dc2626;color:#dc2626;font-weight:700;">皆不成立</div>
   </div>
 
   <table class="matrix-table">
@@ -4222,19 +4388,19 @@ body {
     </thead>
     <tbody>
       <tr>
-        <td style="color:#c9a84c;font-weight:600;">核心謬誤</td>
+        <td style="color:#a07b28;font-weight:600;">核心謬誤</td>
         <td>無窮、常相違</td>
         <td>無中生有、因相壞</td>
         <td>性相違</td>
       </tr>
       <tr>
-        <td style="color:#c9a84c;font-weight:600;">經典譬喻</td>
+        <td style="color:#a07b28;font-weight:600;">經典譬喻</td>
         <td>泥中瓶未變、縷疊相壞</td>
         <td>第二頭、沙不出油</td>
         <td>明闇不同處</td>
       </tr>
       <tr>
-        <td style="color:#c9a84c;font-weight:600;">破斥核心</td>
+        <td style="color:#a07b28;font-weight:600;">破斥核心</td>
         <td>墮常過，破壞造作</td>
         <td>墮同疑因，破壞專屬力</td>
         <td>邏輯悖論</td>
@@ -4258,7 +4424,7 @@ body {
     <summary>謬誤一：生已復生，是則無窮</summary>
     <div class="detail-content">
       <p>前提：果已存在於因中。動作：卻仍需要「生」。矛盾：既然「已存在」的狀態下會發生「生」，那麼「生出來」（依然存在）之後，理應繼續觸發「生」。結論：陷入無窮遞迴。</p>
-      <p style="margin-top:0.8rem;font-style:italic;color:#8b949e;">原文：「如果先未生而生者，今生已復應更生。何以故？因中常有故。」</p>
+      <p style="margin-top:0.8rem;font-style:italic;color:#666666;">原文：「如果先未生而生者，今生已復應更生。何以故？因中常有故。」</p>
     </div>
   </details>
 
@@ -4266,7 +4432,7 @@ body {
     <summary>謬誤二：生與未生共相違</summary>
     <div class="detail-content">
       <p>「生」與「未生」是互斥狀態。若未生之時果已定有，則生已則應變成無。兩者為互斥狀態，若無差別，則「有」不具備生的意義。</p>
-      <p style="margin-top:0.8rem;font-style:italic;color:#8b949e;">原文：「生、未生共相違故；生未生相違故，是二作相亦相違。」</p>
+      <p style="margin-top:0.8rem;font-style:italic;color:#666666;">原文：「生、未生共相違故；生未生相違故，是二作相亦相違。」</p>
     </div>
   </details>
 
@@ -4274,7 +4440,7 @@ body {
     <summary>經驗檢驗：果應可見，而實不可見</summary>
     <div class="detail-content">
       <p>若實體先有，必具備可觀測性。既然泥中看不見瓶，證明「先有」違背經驗事實。</p>
-      <p style="margin-top:0.8rem;font-style:italic;color:#8b949e;">原文：「如泥中瓶、蒲中席，應可見而實不可見，是故有不生。」</p>
+      <p style="margin-top:0.8rem;font-style:italic;color:#666666;">原文：「如泥中瓶、蒲中席，應可見而實不可見，是故有不生。」</p>
     </div>
   </details>
 
@@ -4282,7 +4448,7 @@ body {
     <summary>敵者救濟一：以「未變」故不見 → 龍樹破斥</summary>
     <div class="detail-content">
       <p>對手主張瓶的本體已存在於泥中，只是尚未「轉變」出瓶的相貌，所以看不見。</p>
-      <p style="margin-top:0.8rem;"><strong style="color:#e74c3c;">龍樹破斥：</strong>若「轉變」＝「果」，轉變動作本身也應該早就在因裡面，理應被看見。若「轉變」≠「果」，轉變之前無果，轉變之後亦無果，果畢竟不可得。</p>
+      <p style="margin-top:0.8rem;"><strong style="color:#dc2626;">龍樹破斥：</strong>若「轉變」＝「果」，轉變動作本身也應該早就在因裡面，理應被看見。若「轉變」≠「果」，轉變之前無果，轉變之後亦無果，果畢竟不可得。</p>
     </div>
   </details>
 
@@ -4290,7 +4456,7 @@ body {
     <summary>敵者再救：八因緣遮蔽 → 龍樹破斥</summary>
     <div class="detail-content">
       <p>對手提出八種物理或心理條件（遠、近、根壞、心不住、障、同、勝、微細），企圖解釋為何既有物會不可見。</p>
-      <p style="margin-top:0.8rem;"><strong style="color:#e74c3c;">龍樹以對稱性檢驗破斥：</strong>若極近不可得 → 稍微移遠應可得；若障不可得 → 無障礙時應可得；若細微不可得 → 果實「麁大」時應可得。結論：因中未生之果，無論如何改變條件皆不可得。</p>
+      <p style="margin-top:0.8rem;"><strong style="color:#dc2626;">龍樹以對稱性檢驗破斥：</strong>若極近不可得 → 稍微移遠應可得；若障不可得 → 無障礙時應可得；若細微不可得 → 果實「麁大」時應可得。結論：因中未生之果，無論如何改變條件皆不可得。</p>
     </div>
   </details>
 
@@ -4298,7 +4464,7 @@ body {
     <summary>細轉麁的自相矛盾</summary>
     <div class="detail-content">
       <p>敵方主張：未生時是「細」，生出後轉為「麁」。</p>
-      <p style="margin-top:0.8rem;"><strong style="color:#e74c3c;">反擊：</strong>如果果實是「麁」的，而因裡面有「細」的，代表「麁大的果」根本不存在於因之中。這直接推翻了「因中先有此果」的根本立論。</p>
+      <p style="margin-top:0.8rem;"><strong style="color:#dc2626;">反擊：</strong>如果果實是「麁」的，而因裡面有「細」的，代表「麁大的果」根本不存在於因之中。這直接推翻了「因中先有此果」的根本立論。</p>
     </div>
   </details>
 
@@ -4332,7 +4498,7 @@ body {
     <summary>謬誤一：無中生有的荒謬</summary>
     <div class="detail-content">
       <p>如果「絕對的不存在」可以作為生起「存在」的條件，那麼任何事物都可從虛無中隨機產生。不該只有特定的結果被產生。人應該長出第二個頭、第三隻手。</p>
-      <p style="margin-top:0.8rem;font-style:italic;color:#8b949e;">原文：「若無而生者，應有第二頭、第三手生。何以故？無而生故。」</p>
+      <p style="margin-top:0.8rem;font-style:italic;color:#666666;">原文：「若無而生者，應有第二頭、第三手生。何以故？無而生故。」</p>
     </div>
   </details>
 
@@ -4340,7 +4506,7 @@ body {
     <summary>謬誤二：特定因果的崩壞</summary>
     <div class="detail-content">
       <p>若因中完全沒有果的潛能（俱無），諸因就不具備生出特定果的「專屬力量」。那麼線不但能織布，理應也能生出車馬、飲食。</p>
-      <p style="margin-top:0.8rem;font-style:italic;color:#8b949e;">原文：「若因中先無果而果生者，則一一物應生一切物，如指端應生車、馬、飲食等。」</p>
+      <p style="margin-top:0.8rem;font-style:italic;color:#666666;">原文：「若因中先無果而果生者，則一一物應生一切物，如指端應生車、馬、飲食等。」</p>
     </div>
   </details>
 
@@ -4348,7 +4514,7 @@ body {
     <summary>不笮於沙：定性因果的死穴</summary>
     <div class="detail-content">
       <p>既然油在芝麻裡是「無」，在沙子裡也是「無」，兩者的「無」是完全相等的。如果「無」能生有，為什麼世人只榨芝麻，不去榨沙子？</p>
-      <p style="margin-top:0.8rem;font-style:italic;color:#8b949e;">原文：「如須油者要從麻取，不笮於沙；若俱無者，何故麻中求，而不笮沙？」</p>
+      <p style="margin-top:0.8rem;font-style:italic;color:#666666;">原文：「如須油者要從麻取，不笮於沙；若俱無者，何故麻中求，而不笮沙？」</p>
     </div>
   </details>
 
@@ -4373,7 +4539,7 @@ body {
 
   <div class="card card-red">
     <p>存在與不存在是絕對互斥的性質（性相違）。如同光明與黑暗，在絕對的本體論層面，無法在同一個時空座標共存。第三假設同時承擔了前兩個假設的一切矛盾，是最短的破斥路線。</p>
-    <p style="margin-top:1rem;color:#8b949e;font-size:0.9rem;">此外，「有」的部分與「無」的部分，已分別在前兩支中被徹底破斥，故此句無需更多展開。</p>
+    <p style="margin-top:1rem;color:#666666;font-size:0.9rem;">此外，「有」的部分與「無」的部分，已分別在前兩支中被徹底破斥，故此句無需更多展開。</p>
   </div>
 </div>
 </section>
@@ -4391,13 +4557,13 @@ body {
   <h4>空性骨牌效應</h4>
 
   <div class="flow">
-    <div class="flow-box" style="border-color:#ffffff;color:#ffffff;font-weight:700;">果畢竟不生</div>
+    <div class="flow-box" style="border-color:#1a1a1a;color:#1a1a1a;font-weight:700;">果畢竟不生</div>
     <span class="flow-arrow">→</span>
-    <div class="flow-box" style="border-color:#c9a84c;">有為法空</div>
+    <div class="flow-box" style="border-color:#a07b28;">有為法空</div>
     <span class="flow-arrow">→</span>
-    <div class="flow-box" style="border-color:#8b949e;">無為法亦空</div>
+    <div class="flow-box" style="border-color:#666666;">無為法亦空</div>
     <span class="flow-arrow">→</span>
-    <div class="flow-box" style="border-color:#8b949e;opacity:0.6;">我空</div>
+    <div class="flow-box" style="border-color:#666666;opacity:0.6;">我空</div>
   </div>
 
   <div class="card card-gold">
@@ -4408,11 +4574,11 @@ body {
 
   <div class="card card-cyan">
     <p>龍樹的終極目的<strong>並非否定世間運作</strong>，而是打破「實體化」的因果執著。只要預設事物有固定不變的「自性」，必然陷入死胡同。「空」正是剝離了實體自性，因果現象才能如幻地隨著條件（緣起）無礙生滅。</p>
-    <p style="margin-top:1rem;color:#8b949e;font-size:0.9rem;">《十二門論》第二門，以極致的邏輯推演，完美證成了《中論》開宗明義的首句。澈見因果之「不生」，即是通達中道之門。</p>
+    <p style="margin-top:1rem;color:#666666;font-size:0.9rem;">《十二門論》第二門，以極致的邏輯推演，完美證成了《中論》開宗明義的首句。澈見因果之「不生」，即是通達中道之門。</p>
   </div>
 
   <div style="text-align:center;margin-top:2rem;">
-    <span style="font-family:'Noto Serif TC',serif;font-size:2rem;color:#ffffff;letter-spacing:0.3em;">
+    <span style="font-family:'Noto Serif TC',serif;font-size:2rem;color:#1a1a1a;letter-spacing:0.3em;">
       不生 不滅 不常 不斷<br>不一 不異 不來 不出
     </span>
   </div>
@@ -4424,7 +4590,7 @@ body {
 <div class="container">
   <div class="section-label">Original Text</div>
   <h3>原典全文：觀有果無果門第二</h3>
-  <p style="color:#8b949e;margin-bottom:2rem;">出自《十二門論》，龍樹菩薩造，鳩摩羅什譯。下文依大正藏校勘。</p>
+  <p style="color:#666666;margin-bottom:2rem;">出自《十二門論》，龍樹菩薩造，鳩摩羅什譯。下文依大正藏校勘。</p>
 
   <div class="classical-text">
     <p style="text-indent:0;font-weight:600;">復次，諸法不生。何以故？</p>
@@ -4512,7 +4678,7 @@ body {
         <span class="gate-label">第三門・觀緣門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate03">
+      <div class="gate-body g-gate03" style="background:#E8EAED; color:#2C2C2C;">
 <!-- ==================== HERO ==================== -->
 <header class="hero">
   <h1>《十二門論》觀緣門第三</h1>
@@ -4928,7 +5094,7 @@ body {
         <span class="gate-label">第四門・觀相門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate04">
+      <div class="gate-body g-gate04" style="background:#f5f3ee; color:#2c2c2c;">
 <!-- ====== HERO ====== -->
 <header class="hero">
   <div class="hero-content">
@@ -5338,7 +5504,7 @@ body {
         <span class="gate-label">第五門・觀有相無相門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate05">
+      <div class="gate-body g-gate05" style="background:#f0eeea; color:#2c2c2c;">
 <div class="container">
 
 <!-- ======================== HERO ======================== -->
@@ -5716,7 +5882,7 @@ body {
         <span class="gate-label">第六門・觀一異門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate06">
+      <div class="gate-body g-gate06" style="background:#f5f3ee; color:#2c2c2c;">
 <div class="container">
 
   <!-- ==================== HERO ==================== -->
@@ -6096,7 +6262,7 @@ body {
         <span class="gate-label">第七門・觀有無門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate07">
+      <div class="gate-body g-gate07" style="background:#faf8f4; color:#2c2c2c;">
 <!-- ==================== HERO ==================== -->
 <header class="hero">
   <div class="hero-label">Madhyamaka Forensic Analysis &middot; Chapter 07</div>
@@ -6467,7 +6633,7 @@ body {
         <span class="gate-label">第八門・觀性門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate08">
+      <div class="gate-body g-gate08" style="background:#f5f2eb; color:#2c2c2c;">
 <!-- Navigation -->
 <nav>
   <span class="brand">觀性門</span>
@@ -6818,7 +6984,7 @@ body {
         <span class="gate-label">第九門・觀因果門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate09">
+      <div class="gate-body g-gate09" style="background:#f8f6f1; color:#2c2c2c;">
 <!-- Navigation -->
 <nav>
   <ul>
@@ -7260,7 +7426,7 @@ body {
         <span class="gate-label">第十門・觀作者門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate10">
+      <div class="gate-body g-gate10" style="background:#f5f0e8; color:#1a1a1a;">
 <!-- ════════════ NAVIGATION ════════════ -->
 <nav>
   <ul>
@@ -7903,7 +8069,7 @@ body {
         <span class="gate-label">第十一門・觀三時門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate11">
+      <div class="gate-body g-gate11" style="background:#F5F0E8; color:#3A3A3A;">
 <!-- ==================== HEADER ==================== -->
 <header>
   <h1>《十二門論》<span>觀三時門第十一</span></h1>
@@ -8317,7 +8483,7 @@ body {
         <span class="gate-label">第十二門・觀生門</span>
         <a href="#toc" class="back-link">▲ 返回目錄</a>
       </div>
-      <div class="gate-body g-gate12">
+      <div class="gate-body g-gate12" style="background:#f5f0e6; color:#2c2c2c;">
 <!-- ==================== HEADER ==================== -->
 <header>
   <h1>諸法無生<span>・</span>畢竟空寂</h1>
@@ -8425,7 +8591,7 @@ body {
     <p>
       若「生」生已，生第二生；第二生生已，生第三生；第三生生已，生第四生⋯⋯如是生則無窮。若已存在之物仍需「生」之動作才能確立其存在，則沒有任何事物能真正完成「生」。
     </p>
-    <p style="text-align:center; color:#c9a84c; font-weight:600; margin-top:12px;">
+    <p style="text-align:center; color:#8b7332; font-weight:600; margin-top:12px;">
       這在邏輯上是不可能的（是事不然）。
     </p>
   </div>
@@ -8437,7 +8603,7 @@ body {
       日常邏輯的映射：已經做好的陶器不需要再製作（<strong>作已不應作</strong>）；已經燒成灰燼的木柴不需要再焚燒（<strong>燒已不應燒</strong>）；已經證悟的境界不需要再證悟（<strong>證已不應證</strong>）。
     </p>
     <p>
-      本體論結論：「<em>如是生已不應更生</em>。」實體存在的完成態（已生）與動態生成的過程（生）在本質上互斥。因此，<strong style="color:#e74c3c;">生法不生</strong>。
+      本體論結論：「<em>如是生已不應更生</em>。」實體存在的完成態（已生）與動態生成的過程（生）在本質上互斥。因此，<strong style="color:#dc2626;">生法不生</strong>。
     </p>
   </div>
 </section>
@@ -8462,7 +8628,7 @@ body {
     <p>
       核心破綻：若不生法生，則離生有生，是則不生。由此推出一系列荒謬：離作有作（沒有製作動作卻有成品）、離去有去（沒有移動動作卻到達目的地）、離食有食（沒有進食動作卻得飽足）。如是則壞世俗法。
     </p>
-    <p style="text-align:center; color:#c9a84c;">結論：是事不然，是故不生法不生。</p>
+    <p style="text-align:center; color:#8b7332;">結論：是事不然，是故不生法不生。</p>
   </div>
 
   <h3>離相之謬的極致推演：若「不生法」皆應生⋯⋯</h3>
@@ -8471,12 +8637,12 @@ body {
       <tr><th>載體</th><th>不存在的狀態（未生）</th><th>荒謬的必然結果</th></tr>
     </thead>
     <tbody>
-      <tr><td>一切凡夫</td><td>未生阿耨多羅三藐三菩提</td><td style="color:#e74c3c;">皆應瞬間成佛</td></tr>
-      <tr><td>不壞法阿羅漢</td><td>煩惱不生</td><td style="color:#e74c3c;">煩惱應無端而生（聖者退轉）</td></tr>
-      <tr><td>兔、馬等獸</td><td>角不生</td><td style="color:#e74c3c;">頭上皆應生出角來（兔馬生角喻）</td></tr>
+      <tr><td>一切凡夫</td><td>未生阿耨多羅三藐三菩提</td><td style="color:#dc2626;">皆應瞬間成佛</td></tr>
+      <tr><td>不壞法阿羅漢</td><td>煩惱不生</td><td style="color:#dc2626;">煩惱應無端而生（聖者退轉）</td></tr>
+      <tr><td>兔、馬等獸</td><td>角不生</td><td style="color:#dc2626;">頭上皆應生出角來（兔馬生角喻）</td></tr>
     </tbody>
   </table>
-  <p style="text-align:center; color:#b8b4ac;">
+  <p style="text-align:center; color:#666666;">
     只要堅持「不存在的東西可以生」，邏輯上就無法阻止兔子長角。
   </p>
 </section>
@@ -8517,7 +8683,7 @@ body {
     <p style="text-align:center;">
       <strong>先有無：</strong>兩者皆非／皆是 → 邏輯矛盾，亦不生。
     </p>
-    <p style="text-align:center; color:#c9a84c; margin-top:12px;">
+    <p style="text-align:center; color:#8b7332; margin-top:12px;">
       條件論無法賦予「未生」實體生起的正當性。
     </p>
   </div>
@@ -8551,7 +8717,7 @@ body {
     <p>
       經文：「未有生，無生時，生於何處行？」若事物還沒有真正產生（未有生），且獨立的「正在生」的時間框架也不存在（無生時），那麼「生」這個動態動作，到底要在哪一個實體空間或時間點上運作（行）？
     </p>
-    <p style="text-align:center; color:#c9a84c;">
+    <p style="text-align:center; color:#8b7332;">
       結論：生若無行處，則無生時生。沒有作用的立足點，動態過程便無法成立。
     </p>
   </div>
@@ -8634,7 +8800,7 @@ body {
     <div class="flow-arrow">↓</div>
     <div class="flow-item destroyed">眾生</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-item" style="border-color:#c9a84c; color:#c9a84c; font-weight:700; font-size:1.2em;">
+    <div class="flow-item" style="border-color:#8b7332; color:#8b7332; font-weight:700; font-size:1.2em;">
       一切法無生，畢竟空寂
     </div>
   </div>
@@ -8651,7 +8817,7 @@ body {
     <strong>凡夫的實體錯覺：</strong>習慣將時間視為一條河流，認為事物從無到有，必定經歷一個名為「正在生」的實體過渡帶。
   </p>
   <p>
-    <strong>龍樹的定格檢視：</strong>要求我們像看電影「定格」一樣去檢視世界。凍結時間後會發現：事物要嘛已經具備形態（無須生），要嘛完全不存在（生不出）。<em style="color:#c9a84c;">根本沒有一個神秘的連續過渡帶叫做「生」。</em>
+    <strong>龍樹的定格檢視：</strong>要求我們像看電影「定格」一樣去檢視世界。凍結時間後會發現：事物要嘛已經具備形態（無須生），要嘛完全不存在（生不出）。<em style="color:#8b7332;">根本沒有一個神秘的連續過渡帶叫做「生」。</em>
   </p>
 
   <h3>本體論的真相：「生」僅為大腦打包的「假名」</h3>
@@ -8663,7 +8829,7 @@ body {
       </div>
       <div>
         <h4>結論</h4>
-        <p>既然只是一張標籤，它就沒有固定不變、獨立自存的實體自性。理解「無生」，即是理解標籤背後的<strong style="color:#c9a84c;">因緣流轉</strong>。</p>
+        <p>既然只是一張標籤，它就沒有固定不變、獨立自存的實體自性。理解「無生」，即是理解標籤背後的<strong style="color:#8b7332;">因緣流轉</strong>。</p>
       </div>
     </div>
   </div>
@@ -8681,19 +8847,19 @@ body {
   <h2 class="section-title">十一、記憶錨點：與《中論・觀去來品》之完美映射</h2>
   <div class="comparison">
     <div>
-      <h4 style="color:#c9a84c;">《中論》— 檢視空間運動（去）</h4>
+      <h4 style="color:#8b7332;">《中論》— 檢視空間運動（去）</h4>
       <p style="text-align:center; font-size:1.15em; line-height:2.2;">
         已去無有去，<br>未去亦無去，<br>離已去未去，<br>去時亦無去。
       </p>
     </div>
     <div>
-      <h4 style="color:#c9a84c;">《十二門論》— 檢視時間生成（生）</h4>
+      <h4 style="color:#8b7332;">《十二門論》— 檢視時間生成（生）</h4>
       <p style="text-align:center; font-size:1.15em; line-height:2.2;">
         今生已不生，<br>不生亦不生，<br>不生亦不生，<br>生時亦不生。
       </p>
     </div>
   </div>
-  <p style="text-align:center; color:#b8b4ac; margin-top:12px;">
+  <p style="text-align:center; color:#666666; margin-top:12px;">
     龍樹菩薩將解構「空間運動」的極致邏輯，完美替換至「時間生成」的解構上。<br>
     掌握三時推檢法，即掌握中觀破邪之核心。
   </p>
@@ -8704,7 +8870,7 @@ body {
 <!-- ==================== S12: 原典 ==================== -->
 <section id="gate12-s12">
   <h2 class="section-title">十二、經文原典全文</h2>
-  <p style="color:#b8b4ac; margin-bottom:16px;">以下為鳩摩羅什所譯《十二門論》〈觀生門第十二〉全文，附異本校勘。</p>
+  <p style="color:#666666; margin-bottom:16px;">以下為鳩摩羅什所譯《十二門論》〈觀生門第十二〉全文。</p>
 
   <div class="original-text">
     <p>復次，一切法空。何以故？生、不生、生時不可得故，今生已不生，不生亦不生，生時亦不生。如說：</p>
@@ -8714,42 +8880,26 @@ body {
       離是生不生，生時亦不生。
     </div>
 
-    <p>生名果起出，未生名未起未出未有，生時名始起未成。是中生果不生者，是生生已不生。何以故？有無窮過故，作已更作故。若生生已生第二生，第二生生已生第三生，第三生生已生第四生；如初生<span class="footnote-ref" title="生【大】＊，〔－〕【宋】＊【元】＊【明】＊">[1]</span>生已有第二生，如是生則無窮。是事不然，是故生不生。復次，若謂生<span class="footnote-ref" title="生【大】＊，〔－〕【宋】＊【元】＊【明】＊">[2]</span>生、已生所用生生，是生不生而生。是事不然。何以故？初生不生而生，是則二種生：生已而生、<span class="footnote-ref" title="不【大】，未【宋】【元】【明】">[3]</span>不生而生，故汝先定說而今不定。如作已不應作、燒已不應燒、證已不應證，如是生已不應更生；是故生法不生。</p>
+    <p>生名果起出，未生名未起未出未有，生時名始起未成。是中生果不生者，是生生已不生。何以故？有無窮過故，作已更作故。若生生已生第二生，第二生生已生第三生，第三生生已生第四生；如初生生已有第二生，如是生則無窮。是事不然，是故生不生。復次，若謂生生、已生所用生生，是生不生而生。是事不然。何以故？初生不生而生，是則二種生：生已而生、不生而生，故汝先定說而今不定。如作已不應作、燒已不應燒、證已不應證，如是生已不應更生；是故生法不生。</p>
 
-    <p>不生法亦不生。何以故？不與生合故，<span class="footnote-ref" title="又【大】，有【宋】【元】【明】">[4]</span>又一切不生有生過故。若不生法<span class="footnote-ref" title="生【大】＊，〔－〕【宋】＊【元】＊【明】＊">[5]</span>生，<span class="footnote-ref" title="則【大】，則不生若【思溪-CB】【磧乙-CB】【嘉興丙-CB】，則不生宮【宋】【元】【明】">[6]</span>則離生有生，<span class="footnote-ref" title="是【大】，〔－〕【宋】【元】【明】">[7]</span>是則<span class="footnote-ref" title="（不生...則）八字【大】，〔－〕【宋】【元】【明】">[8]</span>不生。若離生有生，則離作有作、離去有去、離食有食，如是則壞世俗法。是事不然，是故不生法不生。復次，若不生法生，一切不生法皆應生；一切凡夫未生阿耨多羅三藐三菩提皆應生，不壞法阿羅漢煩惱不生而生，兔馬等角不生而生。是事不然，是故不應說不生而生。</p>
+    <p>不生法亦不生。何以故？不與生合故，又一切不生有生過故。若不生法生，則離生有生，是則不生。若離生有生，則離作有作、離去有去、離食有食，如是則壞世俗法。是事不然，是故不生法不生。復次，若不生法生，一切不生法皆應生；一切凡夫未生阿耨多羅三藐三菩提皆應生，不壞法阿羅漢煩惱不生而生，兔馬等角不生而生。是事不然，是故不應說不生而生。</p>
 
     <p>問曰：「不生而生者，如有因緣和合時方作者，方便具足是則不生而生，非一切不生而生，是故不應以一切不生而生為難。」</p>
 
-    <p>答曰：「若法生時方作者，方便眾緣和合生，是中先定有不生，先無亦不生，<span class="footnote-ref" title="又【大】，〔－〕【宋】【元】【明】">[9]</span>又有無亦不生，是三種求生<span class="footnote-ref" title="不【大】，亦不【宋】【元】【明】">[10]</span>不可得，如先說。是故不生法不生。</p>
+    <p>答曰：「若法生時方作者，方便眾緣和合生，是中先定有不生，先無亦不生，又有無亦不生，是三種求生不可得，如先說。是故不生法不生。</p>
 
-    <p>「生時亦不生。何以故？有生生過，不生而生過故。生時法，生分不生，如先說。未生分亦不生，如<span class="footnote-ref" title="前【大】，先【宋】【元】【明】">[11]</span>前說。</p>
+    <p>「生時亦不生。何以故？有生生過，不生而生過故。生時法，生分不生，如先說。未生分亦不生，如前說。</p>
 
     <p>「復次，若離生有生時，則應生時生，而實離生無生時，是故生時亦不生。</p>
 
     <p>「復次，若人說生時生，則有二生：一、以生時為生，二、以生時生。無有二法，云何言有二生？是故生時亦不生。</p>
 
-    <p>「復次，未有生，無生時，生於何處行？生若無行處，則無生<span class="footnote-ref" title="時生【大】，〔－〕【宋】【元】【明】">[12]</span>時生，是故生時亦不生。</p>
+    <p>「復次，未有生，無生時，生於何處行？生若無行處，則無生時生，是故生時亦不生。</p>
 
     <p>「如是生、不生、生時皆不成，生法不成故。無生，住、滅亦如是。生、住、滅不成故，則有為法亦不成；有為法不成故，無為法亦不成；有為、無為法不成故，眾生亦不成。是故當知一切法無生，畢竟空寂故。」</p>
   </div>
 
-  <div class="footnotes">
-    <h4 style="color:#b8b4ac; margin-bottom:8px;">校勘記</h4>
-    <ol>
-      <li>生【大】＊，〔－〕【宋】＊【元】＊【明】＊</li>
-      <li>生【大】＊，〔－〕【宋】＊【元】＊【明】＊</li>
-      <li>不【大】，未【宋】【元】【明】</li>
-      <li>又【大】，有【宋】【元】【明】</li>
-      <li>生【大】＊，〔－〕【宋】＊【元】＊【明】＊</li>
-      <li>則【大】，則不生若【思溪-CB】【磧乙-CB】【嘉興丙-CB】，則不生宮【宋】【元】【明】</li>
-      <li>是【大】，〔－〕【宋】【元】【明】</li>
-      <li>（不生...則）八字【大】，〔－〕【宋】【元】【明】</li>
-      <li>又【大】，〔－〕【宋】【元】【明】</li>
-      <li>不【大】，亦不【宋】【元】【明】</li>
-      <li>前【大】，先【宋】【元】【明】</li>
-      <li>時生【大】，〔－〕【宋】【元】【明】</li>
-    </ol>
-  </div>
+  
 </section>
 
 <div class="divider">— ◆ —</div>
@@ -8759,7 +8909,7 @@ body {
   <p style="font-size:1.3em; margin-bottom:12px;">
     <strong>是故當知一切法無生，畢竟空寂故。</strong>
   </p>
-  <p style="color:#b8b4ac; font-size:0.95em;">
+  <p style="color:#666666; font-size:0.95em;">
     — 龍樹菩薩《十二門論》〈觀生門第十二〉終
   </p>
 </div>
