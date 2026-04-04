@@ -2332,13 +2332,14 @@ body {
 .g-gate07 .col-card.red h4 { color: #c0392b; }
 .g-gate07 .col-card.gold h4 { color: #b8943e; }
 .g-gate07 .cascade {
-    margin: 24px 0;
-    padding-left: 20px;
+    margin: 24px 0 24px 12px;
+    border-left: 3px solid #b8943e;
+    padding-left: 28px;
   }
 .g-gate07 .cascade-step {
     position: relative;
-    padding: 14px 20px 14px 28px;
-    margin-bottom: 10px;
+    padding: 16px 20px 16px 24px;
+    margin-bottom: 16px;
     background: #ffffff;
     border-radius: 8px;
     border: 1px solid #e0dcd4;
@@ -2347,22 +2348,13 @@ body {
 .g-gate07 .cascade-step::before {
     content: '';
     position: absolute;
-    left: -20px;
+    left: -29px;
     top: 50%;
-    width: 20px;
-    height: 2px;
+    width: 28px;
+    height: 3px;
     background: #b8943e;
   }
-.g-gate07 .cascade-step::after {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 0;
-    bottom: -10px;
-    width: 2px;
-    background: #b8943e;
-  }
-.g-gate07 .cascade-step:last-child::after { display: none; }
+.g-gate07 .cascade-step:last-child { margin-bottom: 0; }
 .g-gate07 .cascade-step .step-label {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
