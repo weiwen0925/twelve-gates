@@ -219,6 +219,14 @@ body {
   .sidebar, .sidebar-toggle, .sidebar-overlay { display: none !important; }
   .gate-nav-header { position: relative; }
 }
+
+/* ===== 防複製 ===== */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 </style>
 
 <style>
@@ -8912,6 +8920,19 @@ window.addEventListener('scroll', function() {
     item.classList.toggle('active', item.getAttribute('href') === '#' + current);
   });
 });
+
+/* 防複製：禁用右鍵、快捷鍵 */
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+    e.preventDefault();
+  }
+  if (e.metaKey && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+    e.preventDefault();
+  }
+});
+document.addEventListener('copy', function(e) { e.preventDefault(); });
+document.addEventListener('cut', function(e) { e.preventDefault(); });
 </script>
 
 </body>
