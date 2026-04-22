@@ -5,6 +5,26 @@
 <!-- wy-obfs:v2 -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- bx-ai-meta:v1 -->
+<meta name="robots" content="noai, noimageai">
+<meta name="GPTBot" content="noindex, nofollow">
+<meta name="ChatGPT-User" content="noindex, nofollow">
+<meta name="OAI-SearchBot" content="noindex, nofollow">
+<meta name="ClaudeBot" content="noindex, nofollow">
+<meta name="Claude-Web" content="noindex, nofollow">
+<meta name="Claude-User" content="noindex, nofollow">
+<meta name="anthropic-ai" content="noindex, nofollow">
+<meta name="Google-Extended" content="noindex, nofollow">
+<meta name="Googlebot" content="noai, noimageai">
+<meta name="PerplexityBot" content="noindex, nofollow">
+<meta name="Perplexity-User" content="noindex, nofollow">
+<meta name="CCBot" content="noindex, nofollow">
+<meta name="FacebookBot" content="noindex, nofollow">
+<meta name="Bytespider" content="noindex, nofollow">
+<meta name="Amazonbot" content="noindex, nofollow">
+<meta name="Applebot-Extended" content="noindex, nofollow">
+<meta name="cohere-ai" content="noindex, nofollow">
+<meta name="Diffbot" content="noindex, nofollow">
 <title>《十二門論》完整彙整 — 龍樹菩薩造・鳩摩羅什譯</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -133,6 +153,98 @@ body {
 .back-link:hover { color: #c9a84c; border-color: #8b7332; }
 
 /* CRITICAL: gate-body must behave like <body>
+<!-- bx-devtools:v1 -->
+<script>
+(function(){
+  var active=false, banner=null, sigA=false;
+
+  function makeBanner(){
+    if(banner) return;
+    banner=document.createElement('div');
+    banner.id='bxDevBanner';
+    banner.setAttribute('style',
+      'position:fixed;top:0;left:0;right:0;z-index:2147483646;'+
+      'background:linear-gradient(90deg,#1e1a14,#2b2217);color:#d4a84b;'+
+      'padding:12px 20px;text-align:center;'+
+      'font:14px/1.6 "Noto Sans TC","Microsoft JhengHei",sans-serif;'+
+      'border-bottom:2px solid #b8860b;box-shadow:0 4px 16px rgba(0,0,0,.45);'+
+      'letter-spacing:1px;transition:transform .4s ease;transform:translateY(-105%);');
+    banner.innerHTML=
+      '本站為個人研讀彙整 · 歡迎訂閱支持 '+
+      '<a href="https://www.youtube.com/@Chengweiwen/" target="_blank" rel="noopener" '+
+      'style="color:#ffd27a;margin:0 6px;border-bottom:1px dotted #d4a84b;text-decoration:none;">'+
+      '@Chengweiwen</a> · '+
+      '<span style="color:#8b7d66;">轉發請保留連結與迴向偈</span>';
+    (document.body||document.documentElement).appendChild(banner);
+    requestAnimationFrame(function(){ banner.style.transform='translateY(0)'; });
+  }
+  function dropBanner(){
+    if(!banner) return;
+    var b=banner; banner=null;
+    b.style.transform='translateY(-105%)';
+    setTimeout(function(){ try{b.remove();}catch(e){} },500);
+  }
+
+  var trap={};
+  try{ Object.defineProperty(trap,'_tag',{ get:function(){ sigA=true; return ''; }}); }catch(e){}
+
+  function signalB(){
+    try{
+      var dh=(window.outerHeight||0)-(window.innerHeight||0);
+      var dw=(window.outerWidth||0)-(window.innerWidth||0);
+      return dh>200 || dw>200;
+    }catch(e){ return false; }
+  }
+
+  function tick(){
+    sigA=false;
+    try{ console.log('%c',trap); }catch(e){}
+    var detected = sigA && signalB();
+    if(detected && !active){ active=true; try{ makeBanner(); }catch(e){} }
+    else if(!detected && active){ active=false; try{ dropBanner(); }catch(e){} }
+  }
+
+  function start(){
+    setTimeout(tick, 800);
+    setInterval(tick, 1800);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', start, { once:true });
+  } else {
+    start();
+  }
+})();
+</script>
+<!-- bx-bot-detect:v1 -->
+<script>
+(function(){
+  try{
+    var D=false;
+    if(navigator.webdriver===true) D=true;
+    if(/HeadlessChrome|PhantomJS|SlimerJS|Electron/i.test(navigator.userAgent||'')) D=true;
+    if(window._phantom||window.callPhantom||window.__nightmare) D=true;
+    if(window.__selenium_unwrapped||window.__webdriver_evaluate||window.__driver_evaluate||
+       window.__webdriver_script_fn||window.__fxdriver_evaluate||window.__selenium_evaluate) D=true;
+    if(window.Cypress||window.__pw_manual||window.__playwright||
+       window._puppeteer||window.__puppeteer_evaluation_script__) D=true;
+    if(navigator.languages && navigator.languages.length===0) D=true;
+    if(D){
+      try{
+        var html=document.documentElement;
+        html.innerHTML='<head><meta charset="utf-8"><title>受保護內容</title></head><body></body>';
+      }catch(e){}
+      var sh=document.createElement('div');
+      sh.setAttribute('id','bxBotShield');
+      sh.setAttribute('style','position:fixed;inset:0;z-index:2147483647;'+
+        'background:#1e1a14;color:#c4a76c;display:flex;align-items:center;justify-content:center;'+
+        'font:16px/1.8 "Noto Sans TC","Microsoft JhengHei",sans-serif;text-align:center;padding:40px;');
+      sh.innerHTML='<div><div style="color:#d4a84b;font-size:20px;margin-bottom:16px;">本頁內容受保護</div>'+
+        '偵測到自動化/爬蟲環境，內容無法顯示。<br>請在正常瀏覽器中訪問原站。</div>';
+      (document.body||document.documentElement).appendChild(sh);
+    }
+  }catch(e){}
+})();
+</script>
 <!-- 下載混淆層四：本機開啟警示 -->
 <div id="wy-offline-shield" style="display:none;position:fixed;inset:0;z-index:9999;
   background:radial-gradient(ellipse at center,#1e1a14,#05040a 90%);
