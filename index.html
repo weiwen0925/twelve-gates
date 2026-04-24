@@ -4,6 +4,102 @@
 <head>
 <!-- wy-obfs:v2 -->
 <meta charset="utf-8"/>
+<meta name="wy-freshness-v2" content="v1">
+<style id="wy-preguard-style">html{visibility:hidden!important}</style>
+
+<script id="wy-preguard-js">
+/* ==== L6 · Online Freshness Guard（universal） ==== */
+(function(){
+  var ALLOWED_HOST = 'weiwen0925.github.io';
+  var ALLOWED_PATH = '/twelve-gates/';
+  var PING_TIMEOUT = 6000;
+
+  window.__wyOriginOK = false;
+  var _resolve, _reject;
+  window.__wyReady = new Promise(function(res, rej){ _resolve = res; _reject = rej; });
+
+  function _reveal(){
+    try {
+      var s = document.getElementById('wy-preguard-style');
+      if (s && s.parentNode) s.parentNode.removeChild(s);
+      document.documentElement.style.visibility = '';
+    } catch(e) {}
+  }
+
+  function _lockdown(){
+    var render = function(){
+      if (!document.body) return;
+      try {
+        document.body.innerHTML =
+          '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;'
+        + 'padding:60px 40px;box-sizing:border-box;background:#f7f3ec;color:#5a3a1a;'
+        + 'font-family:\'Noto Serif TC\',\'Songti TC\',\'PingFang TC\',serif;text-align:center;">'
+        + '<div style="max-width:560px;">'
+        + '<div style="font-size:14px;letter-spacing:6px;color:#b8860b;margin-bottom:18px;">此 頁 僅 供 線 上 閱 讀</div>'
+        + '<h1 style="font-size:30px;letter-spacing:4px;margin:0 0 26px;color:#8b5e3c;font-weight:500;">請由正式網址線上存取</h1>'
+        + '<p style="font-size:15px;line-height:2;margin:0 0 16px;color:#6b4e2e;">本頁僅於下列正式網址線上提供閱讀：</p>'
+        + '<p style="font-size:17px;line-height:2;margin:0 0 32px;">'
+        + '<a href="https://' + ALLOWED_HOST + ALLOWED_PATH + '" '
+        + 'style="color:#b8860b;text-decoration:none;border-bottom:1px solid #b8860b;padding-bottom:2px;">'
+        + 'https://' + ALLOWED_HOST + ALLOWED_PATH + '</a></p>'
+        + '<p style="font-size:13px;line-height:2;color:#8b7355;opacity:.85;margin:0;">歡迎轉發結緣連結；請勿下載散布本檔案或網頁封存檔。</p>'
+        + '<p style="font-size:12px;line-height:2;color:#a08561;opacity:.7;margin:18px 0 0;letter-spacing:2px;">願以此功德　普及於一切　我等與眾生　皆共成佛道</p>'
+        + '</div></div>';
+        document.title = '此頁需由正式網址線上存取';
+      } catch(e) {}
+      _reveal();
+    };
+    try { _reject && _reject('locked'); } catch(e) {}
+    if (document.body) render();
+    else document.addEventListener('DOMContentLoaded', render);
+  }
+
+  function _pass(){
+    window.__wyOriginOK = true;
+    _reveal();
+    try { _resolve && _resolve(); } catch(e) {}
+  }
+
+  // === 第一道：同步 origin 檢查 ===
+  var host = location.hostname;
+  var proto = location.protocol;
+  var path = location.pathname || '/';
+  var pathOK = path.indexOf(ALLOWED_PATH) === 0;
+  var hostOK = host === ALLOWED_HOST;
+  var protoOK = (proto === 'https:' || proto === 'http:');
+
+  if (!hostOK || !protoOK || !pathOK) { _lockdown(); return; }
+
+  // === 第二道：線上活性驗證 ===
+  try {
+    if (typeof fetch !== 'function') { _lockdown(); return; }
+    var url = 'https://' + ALLOWED_HOST + ALLOWED_PATH
+            + '?_wyping=' + Date.now() + '.' + Math.floor(Math.random() * 1e9);
+
+    var done = false;
+    var timer = setTimeout(function(){ if (!done) { done = true; _lockdown(); } }, PING_TIMEOUT);
+
+    var opts = { method: 'HEAD', cache: 'no-store', credentials: 'omit', redirect: 'follow' };
+    if (typeof AbortController === 'function') {
+      var ctrl = new AbortController();
+      opts.signal = ctrl.signal;
+      setTimeout(function(){ try { ctrl.abort(); } catch(e){} }, PING_TIMEOUT);
+    }
+
+    fetch(url, opts).then(function(res){
+      if (done) return;
+      done = true; clearTimeout(timer);
+      if (res && res.ok) _pass(); else _lockdown();
+    }).catch(function(){
+      if (done) return;
+      done = true; clearTimeout(timer);
+      _lockdown();
+    });
+  } catch(e) { _lockdown(); }
+})();
+</script>
+
+
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- bx-ai-meta:v1 -->
 <meta name="robots" content="noai, noimageai">
