@@ -190,6 +190,188 @@
   } catch(e) {}
 })();
 </script>
+<meta name="wy-l10" content="v1">
+<script id="wy-l10">
+/* ==== L10 · Lazy-DOM Extraction ==== */
+(function(){
+  var MIN_CHARS = 120;               // 章節判定：內文至少 120 字
+  var MIN_CHAPTERS = 2;              // 至少抓到 2 個候選才當作成功
+  var ROOT_MARGIN = '600px';         // 捲動預取距離
+  var POLL_MS = 200;                 // matchMedia 輪詢間隔
+
+  function _b64enc(s){
+    try { return btoa(unescape(encodeURIComponent(s))); }
+    catch(e){ return ''; }
+  }
+  function _b64dec(s){
+    try { return decodeURIComponent(escape(atob(s))); }
+    catch(e){ return ''; }
+  }
+
+  function _textLen(el){
+    return (el && el.innerText ? el.innerText.length
+         : (el && el.textContent ? el.textContent.length : 0));
+  }
+
+  /* 掃描章節候選：優先語意化標籤，退而找文字密集區 */
+  function _findChapters(){
+    var sel = [
+      'main > section', 'main > article',
+      'article.chapter', 'section.chapter', '.chapter',
+      '[data-chapter]', 'section[id*="ch"]', 'article[id*="ch"]',
+      'body > section', 'body > article'
+    ];
+    var found = [];
+    for (var i = 0; i < sel.length; i++) {
+      var list = document.querySelectorAll(sel[i]);
+      if (list && list.length >= MIN_CHAPTERS) {
+        for (var j = 0; j < list.length; j++) {
+          if (_textLen(list[j]) >= MIN_CHARS) found.push(list[j]);
+        }
+        if (found.length >= MIN_CHAPTERS) return found;
+        found = [];
+      }
+    }
+    /* 退路：找最大文字容器的直接子元素 */
+    var best = null, bestScore = 0;
+    var all = document.querySelectorAll('body *');
+    for (var k = 0; k < all.length; k++) {
+      var el = all[k];
+      var tag = el.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'LINK' || tag === 'META') continue;
+      var blocks = 0;
+      for (var m = 0; m < el.children.length; m++) {
+        if (_textLen(el.children[m]) >= MIN_CHARS) blocks++;
+      }
+      if (blocks > bestScore) { bestScore = blocks; best = el; }
+    }
+    if (best && bestScore >= MIN_CHAPTERS) {
+      var kids = best.children;
+      for (var n = 0; n < kids.length; n++) {
+        if (_textLen(kids[n]) >= MIN_CHARS) found.push(kids[n]);
+      }
+    }
+    return found;
+  }
+
+  /* 把章節內容抽離、以 placeholder 保留高度 */
+  function _extract(chapters){
+    for (var i = 0; i < chapters.length; i++) {
+      var el = chapters[i];
+      if (el.hasAttribute('data-wy-l10')) continue;        /* 冪等 */
+      var h = el.offsetHeight || 0;                         /* visibility:hidden 也能量高 */
+      var html = el.innerHTML || '';
+      var enc = _b64enc(html);
+      if (!enc) continue;
+      el.setAttribute('data-wy-l10', enc);
+      el.setAttribute('data-wy-l10-h', String(h));
+      el.innerHTML = '<div class="wy-l10-ph" style="min-height:' + h + 'px"></div>';
+    }
+  }
+
+  /* 解碼：從 attribute 還原內容 */
+  var _open = new Set();
+  function _open_add(el){ _open.add(el); }
+  function _open_del(el){ _open.delete(el); }
+
+  function _decode(el){
+    if (_open.has(el)) return;
+    var enc = el.getAttribute('data-wy-l10');
+    if (!enc) return;
+    var html = _b64dec(enc);
+    if (html) { el.innerHTML = html; _open_add(el); }
+  }
+  function _reencode(el){
+    if (!_open.has(el)) return;
+    var h = el.getAttribute('data-wy-l10-h') || '500';
+    el.innerHTML = '<div class="wy-l10-ph" style="min-height:' + h + 'px"></div>';
+    _open_del(el);
+  }
+
+  function _wipeAll(){
+    var list = document.querySelectorAll('[data-wy-l10]');
+    for (var i = 0; i < list.length; i++) _reencode(list[i]);
+  }
+
+  /* IntersectionObserver lazy reveal */
+  function _observe(){
+    if (typeof IntersectionObserver !== 'function') {
+      /* 舊瀏覽器 fallback：全部解碼 */
+      var all = document.querySelectorAll('[data-wy-l10]');
+      for (var i = 0; i < all.length; i++) _decode(all[i]);
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) _decode(entries[i].target);
+      }
+    }, { root: null, rootMargin: ROOT_MARGIN, threshold: 0 });
+    var list = document.querySelectorAll('[data-wy-l10]');
+    for (var j = 0; j < list.length; j++) io.observe(list[j]);
+  }
+
+  /* 列印偵測雙保險 */
+  function _bindPrintGuards(){
+    try { window.addEventListener('beforeprint', _wipeAll); } catch(e) {}
+    try {
+      var mql = window.matchMedia && window.matchMedia('print');
+      if (mql) {
+        var onChange = function(e){ if (e.matches) _wipeAll(); };
+        if (typeof mql.addEventListener === 'function') mql.addEventListener('change', onChange);
+        else if (typeof mql.addListener === 'function') mql.addListener(onChange);
+      }
+    } catch(e) {}
+    /* 輪詢保險：部分 Safari 版本 print media 切換不觸發事件 */
+    setInterval(function(){
+      try {
+        if (window.matchMedia && window.matchMedia('print').matches) _wipeAll();
+      } catch(e) {}
+    }, POLL_MS);
+    /* 錨點跳轉補救：hash 變動時強制解碼目標 */
+    window.addEventListener('hashchange', function(){
+      try {
+        var id = location.hash.replace('#','');
+        if (!id) return;
+        var t = document.getElementById(id);
+        if (t && t.hasAttribute('data-wy-l10')) _decode(t);
+        /* 若 target 在某個已抽離章節之內，也一併解碼其 ancestor */
+        if (t) {
+          var p = t.parentElement;
+          while (p) {
+            if (p.hasAttribute && p.hasAttribute('data-wy-l10')) { _decode(p); break; }
+            p = p.parentElement;
+          }
+        }
+      } catch(e) {}
+    });
+  }
+
+  function _boot(){
+    var chapters = _findChapters();
+    if (!chapters || chapters.length < MIN_CHAPTERS) return;  /* 安全：抓不到就不動 */
+    _extract(chapters);
+    _bindPrintGuards();
+    _observe();
+    try {
+      document.documentElement.setAttribute('data-wy-l10-active',
+        String(chapters.length));
+    } catch(e) {}
+  }
+
+  /* 啟動時機：優先等 __wyReady（L6 通過）；否則 DOMContentLoaded */
+  if (window.__wyReady && typeof window.__wyReady.then === 'function') {
+    window.__wyReady.then(function(){
+      /* 延一 tick 給 L1/L5 解碼器先跑完 */
+      setTimeout(_boot, 50);
+    }).catch(function(){});
+  } else if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(_boot, 50); });
+  } else {
+    setTimeout(_boot, 50);
+  }
+})();
+</script>
+
 
 <meta name="wy-freshness-v2" content="v1">
 
