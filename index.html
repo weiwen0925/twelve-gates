@@ -4,14 +4,15 @@
 <head>
 <!-- wy-obfs:v2 -->
 <meta charset="utf-8"/>
-<meta name="wy-freshness-v2" content="v1">
+<meta name="wy-full-protection" content="v2">
+<meta name="robots" content="noai, noimageai, noarchive, nosnippet"><meta name="googlebot" content="noai, noimageai"><meta name="GPTBot" content="noindex, nofollow">
 <style id="wy-preguard-style">html{visibility:hidden!important}</style>
-
 <script id="wy-preguard-js">
-/* ==== L6 · Online Freshness Guard（universal） ==== */
+/* ==== 完整防護主腳本：L4 + L6 + B + L2 ==== */
 (function(){
   var ALLOWED_HOST = 'weiwen0925.github.io';
   var ALLOWED_PATH = '/twelve-gates/';
+  var PAGE_TITLE   = '此頁需由正式網址線上存取';
   var PING_TIMEOUT = 6000;
 
   window.__wyOriginOK = false;
@@ -36,7 +37,7 @@
         + 'font-family:\'Noto Serif TC\',\'Songti TC\',\'PingFang TC\',serif;text-align:center;">'
         + '<div style="max-width:560px;">'
         + '<div style="font-size:14px;letter-spacing:6px;color:#b8860b;margin-bottom:18px;">此 頁 僅 供 線 上 閱 讀</div>'
-        + '<h1 style="font-size:30px;letter-spacing:4px;margin:0 0 26px;color:#8b5e3c;font-weight:500;">請由正式網址線上存取</h1>'
+        + '<h1 style="font-size:30px;letter-spacing:4px;margin:0 0 26px;color:#8b5e3c;font-weight:500;">' + PAGE_TITLE + '</h1>'
         + '<p style="font-size:15px;line-height:2;margin:0 0 16px;color:#6b4e2e;">本頁僅於下列正式網址線上提供閱讀：</p>'
         + '<p style="font-size:17px;line-height:2;margin:0 0 32px;">'
         + '<a href="https://' + ALLOWED_HOST + ALLOWED_PATH + '" '
@@ -45,7 +46,7 @@
         + '<p style="font-size:13px;line-height:2;color:#8b7355;opacity:.85;margin:0;">歡迎轉發結緣連結；請勿下載散布本檔案或網頁封存檔。</p>'
         + '<p style="font-size:12px;line-height:2;color:#a08561;opacity:.7;margin:18px 0 0;letter-spacing:2px;">願以此功德　普及於一切　我等與眾生　皆共成佛道</p>'
         + '</div></div>';
-        document.title = '此頁需由正式網址線上存取';
+        document.title = PAGE_TITLE;
       } catch(e) {}
       _reveal();
     };
@@ -58,34 +59,47 @@
     window.__wyOriginOK = true;
     _reveal();
     try { _resolve && _resolve(); } catch(e) {}
+    /* L2 · 列印攔截：僅在通過後才掛上，避免離線誤觸 */
+    try {
+      var _noop = function(){};
+      window.print = _noop;
+      document.addEventListener('keydown', function(e){
+        if ((e.metaKey || e.ctrlKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+          e.preventDefault(); e.stopPropagation();
+        }
+      }, true);
+    } catch(e) {}
   }
 
-  // === 第一道：同步 origin 檢查 ===
+  /* === B · Webdriver / Headless 偵測 === */
+  try {
+    var ua = (navigator.userAgent || '');
+    var botRE = /HeadlessChrome|PhantomJS|Selenium|puppeteer|playwright|slimerjs/i;
+    if (navigator.webdriver === true || botRE.test(ua)) { _lockdown(); return; }
+  } catch(e) {}
+
+  /* === L4 · Origin Lock（同步） === */
   var host = location.hostname;
   var proto = location.protocol;
   var path = location.pathname || '/';
-  var pathOK = path.indexOf(ALLOWED_PATH) === 0;
   var hostOK = host === ALLOWED_HOST;
   var protoOK = (proto === 'https:' || proto === 'http:');
-
+  var pathOK = path.indexOf(ALLOWED_PATH) === 0;
   if (!hostOK || !protoOK || !pathOK) { _lockdown(); return; }
 
-  // === 第二道：線上活性驗證 ===
+  /* === L6 · Live Freshness（非同步 HEAD ping） === */
   try {
     if (typeof fetch !== 'function') { _lockdown(); return; }
     var url = 'https://' + ALLOWED_HOST + ALLOWED_PATH
             + '?_wyping=' + Date.now() + '.' + Math.floor(Math.random() * 1e9);
-
     var done = false;
     var timer = setTimeout(function(){ if (!done) { done = true; _lockdown(); } }, PING_TIMEOUT);
-
     var opts = { method: 'HEAD', cache: 'no-store', credentials: 'omit', redirect: 'follow' };
     if (typeof AbortController === 'function') {
       var ctrl = new AbortController();
       opts.signal = ctrl.signal;
       setTimeout(function(){ try { ctrl.abort(); } catch(e){} }, PING_TIMEOUT);
     }
-
     fetch(url, opts).then(function(res){
       if (done) return;
       done = true; clearTimeout(timer);
@@ -98,12 +112,95 @@
   } catch(e) { _lockdown(); }
 })();
 </script>
+<style id="wy-l3-print">
+@page { margin: 0; }
+@media print {
+  html { background: #f7f3ec !important; }
+  body { background: #f7f3ec !important; }
+  body > * { display: none !important; visibility: hidden !important; }
+  body::before {
+    content: "此頁僅供線上閱讀，請勿列印或另存為 PDF。\A\A願以此功德，普及於一切；\A我等與眾生，皆共成佛道。";
+    white-space: pre;
+    display: block !important;
+    visibility: visible !important;
+    position: fixed !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 40vh 20px 0;
+    text-align: center;
+    font: 500 18px/2.1 'Noto Serif TC', 'Songti TC', 'PingFang TC', serif;
+    color: #5a3a1a;
+    background: #f7f3ec !important;
+    z-index: 2147483647;
+  }
+}
+</style>
+<script id="wy-l9-antipdf">
+/* ==== L9 · Anti-PDF（列印前 DOM 置換，列印後還原） ==== */
+(function(){
+  var NOTICE_HTML =
+    '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;'
+  + 'padding:40vh 40px 0;box-sizing:border-box;background:#f7f3ec;color:#5a3a1a;'
+  + 'font-family:\'Noto Serif TC\',\'Songti TC\',\'PingFang TC\',serif;text-align:center;">'
+  + '<div style="max-width:560px;">'
+  + '<h1 style="font-size:26px;letter-spacing:4px;margin:0 0 26px;color:#8b5e3c;font-weight:500;">此頁僅供線上閱讀</h1>'
+  + '<p style="font-size:15px;line-height:2;margin:0 0 24px;color:#6b4e2e;">請勿列印或另存為 PDF。<br>歡迎轉發正式網址結緣。</p>'
+  + '<p style="font-size:13px;line-height:2.2;color:#8b7355;letter-spacing:2px;margin:0;">願以此功德，普及於一切；<br>我等與眾生，皆共成佛道。</p>'
+  + '</div></div>';
+
+  function _swap(){
+    try {
+      if (window.__wyPrintStash != null) return;
+      window.__wyPrintStash = document.body.innerHTML;
+      document.body.innerHTML = NOTICE_HTML;
+      /* 解除 preguard 隱藏，讓警語可顯現在 PDF 輸出中 */
+      try {
+        var s = document.getElementById('wy-preguard-style');
+        if (s && s.parentNode) s.parentNode.removeChild(s);
+        document.documentElement.style.visibility = '';
+      } catch(_) {}
+    } catch(e) {}
+  }
+  function _restore(){
+    try {
+      if (window.__wyPrintStash == null) return;
+      document.body.innerHTML = window.__wyPrintStash;
+      delete window.__wyPrintStash;
+    } catch(e) {}
+  }
+
+  /* 1) 標準事件：絕大多數 PDF 匯出管線都會觸發這兩個事件 */
+  window.addEventListener('beforeprint', _swap);
+  window.addEventListener('afterprint', _restore);
+
+  /* 2) MediaQueryList 保險：部分 Safari 版本只走 matchMedia */
+  try {
+    var mql = window.matchMedia && window.matchMedia('print');
+    if (mql) {
+      var handler = function(e){ if (e.matches) _swap(); else _restore(); };
+      if (typeof mql.addEventListener === 'function') mql.addEventListener('change', handler);
+      else if (typeof mql.addListener === 'function') mql.addListener(handler);
+    }
+  } catch(e) {}
+
+  /* 3) 覆寫 window.print（與 L2 的 override 合流，列印前先 swap） */
+  try {
+    var _origPrint = window.print;
+    window.print = function(){ _swap(); /* 不真的呼叫原生，也不輸出 */ };
+    /* 若真有必要供內部呼叫，可改為： _origPrint && _origPrint.call(window); setTimeout(_restore, 500); */
+  } catch(e) {}
+})();
+</script>
+
+<meta name="wy-freshness-v2" content="v1">
+
+
+
 
 
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- bx-ai-meta:v1 -->
-<meta name="robots" content="noai, noimageai">
-<meta name="GPTBot" content="noindex, nofollow">
+
+
 <meta name="ChatGPT-User" content="noindex, nofollow">
 <meta name="OAI-SearchBot" content="noindex, nofollow">
 <meta name="ClaudeBot" content="noindex, nofollow">
@@ -111,7 +208,7 @@
 <meta name="Claude-User" content="noindex, nofollow">
 <meta name="anthropic-ai" content="noindex, nofollow">
 <meta name="Google-Extended" content="noindex, nofollow">
-<meta name="Googlebot" content="noai, noimageai">
+
 <meta name="PerplexityBot" content="noindex, nofollow">
 <meta name="Perplexity-User" content="noindex, nofollow">
 <meta name="CCBot" content="noindex, nofollow">
