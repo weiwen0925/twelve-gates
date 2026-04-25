@@ -4,11 +4,10 @@
 <head>
 <!-- wy-obfs:v2 -->
 <meta charset="utf-8"/>
-<meta name="wy-full-protection" content="v4">
+<meta name="wy-full-protection" content="v5">
 <meta name="robots" content="noai, noimageai, noarchive, nosnippet"><meta name="googlebot" content="noai, noimageai"><meta name="GPTBot" content="noindex, nofollow">
 <style id="wy-preguard-style">html{visibility:hidden!important}</style>
 <script id="wy-preguard-js">
-/* ==== 完整防護主腳本：L4 + L6 + B + L2 ==== */
 (function(){
   var ALLOWED_HOST = 'weiwen0925.github.io';
   var ALLOWED_PATH = '/twelve-gates/';
@@ -31,7 +30,6 @@
     var render = function(){
       if (!document.body) return;
       try {
-        /* 空白頁：不顯示任何文字，只保留淡米色底色 */
         document.body.innerHTML = '';
         document.title = '';
         document.documentElement.style.background = '#f7f3ec';
@@ -49,7 +47,6 @@
     window.__wyOriginOK = true;
     _reveal();
     try { _resolve && _resolve(); } catch(e) {}
-    /* L2 · 列印攔截（溫和版）：通過 origin/freshness 後才掛上 */
     try {
       var _noop = function(){};
       window.print = _noop;
@@ -61,14 +58,12 @@
     } catch(e) {}
   }
 
-  /* === B · Webdriver / Headless 偵測 === */
   try {
     var ua = (navigator.userAgent || '');
     var botRE = /HeadlessChrome|PhantomJS|Selenium|puppeteer|playwright|slimerjs/i;
     if (navigator.webdriver === true || botRE.test(ua)) { _lockdown(); return; }
   } catch(e) {}
 
-  /* === L4 · Origin Lock（同步） === */
   var host = location.hostname;
   var proto = location.protocol;
   var path = location.pathname || '/';
@@ -77,7 +72,6 @@
   var pathOK = path.indexOf(ALLOWED_PATH) === 0;
   if (!hostOK || !protoOK || !pathOK) { _lockdown(); return; }
 
-  /* === L6 · Live Freshness（非同步 HEAD ping） === */
   try {
     if (typeof fetch !== 'function') { _lockdown(); return; }
     var url = 'https://' + ALLOWED_HOST + ALLOWED_PATH
@@ -103,10 +97,14 @@
 })();
 </script>
 <style id="wy-l3-print">
-@media print {
-  html, body, body * { visibility: hidden !important; }
-}
+@media print { html, body, body * { visibility: hidden !important; } }
 </style>
+
+
+
+
+
+
 
 
 
