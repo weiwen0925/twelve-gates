@@ -4,7 +4,7 @@
 <head>
 <!-- wy-obfs:v2 -->
 <meta charset="utf-8"/>
-<meta name="wy-full-protection" content="v5">
+<meta name="wy-full-protection" content="v6">
 <meta name="robots" content="noai, noimageai, noarchive, nosnippet"><meta name="googlebot" content="noai, noimageai"><meta name="GPTBot" content="noindex, nofollow">
 <style id="wy-preguard-style">html{visibility:hidden!important}</style>
 <script id="wy-preguard-js">
@@ -116,6 +116,12 @@
 
 
 
+
+
+
+
+
+
 <meta name="wy-freshness-v2" content="v1">
 
 
@@ -145,348 +151,7 @@
 <meta name="Diffbot" content="noindex, nofollow">
 <title>《十二門論》完整彙整 — 龍樹菩薩造・鳩摩羅什譯</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<style>
-/* ===========================================
-   MASTER LAYOUT
-   =========================================== */
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; padding: 0;
-  font-family: 'Noto Sans TC', sans-serif;
-  background: #0f1318;
-  color: #e6edf3;
-}
 
-/* Hero */
-.master-hero {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at 30% 40%, rgba(201,168,76,0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 60%, rgba(88,166,255,0.05) 0%, transparent 50%),
-    #0f1318;
-  padding: 40px 20px;
-  position: relative;
-}
-.master-hero::before {
-  content: '';
-  position: absolute; top: 50%; left: 50%;
-  width: 500px; height: 500px;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(201,168,76,0.15);
-  border-radius: 50%;
-  animation: master-pulse 4s ease-in-out infinite;
-}
-@keyframes master-pulse {
-  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
-}
-.master-hero h1 {
-  font-family: 'Noto Serif TC', serif;
-  font-size: clamp(2.5em, 5vw, 4em);
-  color: #c9a84c; letter-spacing: 0.2em;
-  margin-bottom: 16px; position: relative;
-}
-.master-hero .author {
-  font-size: 1.2em; color: #8b949e;
-  letter-spacing: 0.15em; margin-bottom: 40px;
-}
-.master-hero .desc {
-  font-size: 1em; color: #8b949e;
-  max-width: 600px; line-height: 1.8; margin-bottom: 50px;
-}
-.scroll-hint {
-  position: absolute; bottom: 40px;
-  animation: master-bounce 2s infinite;
-  color: #8b7332; font-size: 0.9em;
-  letter-spacing: 0.1em; text-decoration: none;
-}
-@keyframes master-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-/* TOC */
-#toc {
-  background: #1a1f2e;
-  border-top: 1px solid #2a3040;
-  border-bottom: 1px solid #2a3040;
-  padding: 60px 20px;
-}
-.toc-container { max-width: 900px; margin: 0 auto; }
-.toc-title {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 1.8em; color: #c9a84c;
-  text-align: center; letter-spacing: 0.15em;
-  margin-bottom: 40px;
-}
-.toc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
-}
-.toc-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 18px;
-  background: rgba(201,168,76,0.05);
-  border: 1px solid #2a3040; border-radius: 8px;
-  text-decoration: none; color: #e6edf3;
-  transition: all 0.3s ease;
-}
-.toc-item:hover {
-  background: rgba(201,168,76,0.12);
-  border-color: #8b7332; transform: translateY(-2px);
-}
-.toc-num {
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 700; color: #c9a84c;
-  font-size: 0.95em; min-width: 55px;
-}
-.toc-name { font-size: 1.05em; letter-spacing: 0.05em; }
-
-/* Gate Sections */
-.gate-section {
-  border-top: 1px solid #2a3040;
-}
-.gate-nav-header {
-  display: flex; justify-content: space-between;
-  align-items: center; padding: 16px 24px 16px 64px;
-  background: #1a1f2e;
-  border-bottom: 1px solid #2a3040;
-  position: sticky; top: 0; z-index: 100;
-}
-.gate-label {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 1.2em; color: #c9a84c;
-  letter-spacing: 0.1em;
-}
-.back-link {
-  color: #8b949e; text-decoration: none;
-  font-size: 0.9em; padding: 6px 14px;
-  border: 1px solid #2a3040; border-radius: 6px;
-  transition: all 0.2s;
-}
-.back-link:hover { color: #c9a84c; border-color: #8b7332; }
-
-/* CRITICAL: gate-body must behave like <body>
-<!-- bx-devtools:v1 -->
-<script>
-(function(){
-  var active=false, banner=null, sigA=false;
-
-  function makeBanner(){
-    if(banner) return;
-    banner=document.createElement('div');
-    banner.id='bxDevBanner';
-    banner.setAttribute('style',
-      'position:fixed;top:0;left:0;right:0;z-index:2147483646;'+
-      'background:linear-gradient(90deg,#1e1a14,#2b2217);color:#d4a84b;'+
-      'padding:12px 20px;text-align:center;'+
-      'font:14px/1.6 "Noto Sans TC","Microsoft JhengHei",sans-serif;'+
-      'border-bottom:2px solid #b8860b;box-shadow:0 4px 16px rgba(0,0,0,.45);'+
-      'letter-spacing:1px;transition:transform .4s ease;transform:translateY(-105%);');
-    banner.innerHTML=
-      '本站為個人研讀彙整 · 歡迎訂閱支持 '+
-      '<a href="https://www.youtube.com/@Chengweiwen/" target="_blank" rel="noopener" '+
-      'style="color:#ffd27a;margin:0 6px;border-bottom:1px dotted #d4a84b;text-decoration:none;">'+
-      '@Chengweiwen</a> · '+
-      '<span style="color:#8b7d66;">轉發請保留連結與迴向偈</span>';
-    (document.body||document.documentElement).appendChild(banner);
-    requestAnimationFrame(function(){ banner.style.transform='translateY(0)'; });
-  }
-  function dropBanner(){
-    if(!banner) return;
-    var b=banner; banner=null;
-    b.style.transform='translateY(-105%)';
-    setTimeout(function(){ try{b.remove();}catch(e){} },500);
-  }
-
-  var trap={};
-  try{ Object.defineProperty(trap,'_tag',{ get:function(){ sigA=true; return ''; }}); }catch(e){}
-
-  function signalB(){
-    try{
-      var dh=(window.outerHeight||0)-(window.innerHeight||0);
-      var dw=(window.outerWidth||0)-(window.innerWidth||0);
-      return dh>200 || dw>200;
-    }catch(e){ return false; }
-  }
-
-  function tick(){
-    sigA=false;
-    try{ console.log('%c',trap); }catch(e){}
-    var detected = sigA && signalB();
-    if(detected && !active){ active=true; try{ makeBanner(); }catch(e){} }
-    else if(!detected && active){ active=false; try{ dropBanner(); }catch(e){} }
-  }
-
-  function start(){
-    setTimeout(tick, 800);
-    setInterval(tick, 1800);
-  }
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded', start, { once:true });
-  } else {
-    start();
-  }
-})();
-</script>
-<!-- bx-bot-detect:v1 -->
-<script>
-(function(){
-  try{
-    var D=false;
-    if(navigator.webdriver===true) D=true;
-    if(/HeadlessChrome|PhantomJS|SlimerJS|Electron/i.test(navigator.userAgent||'')) D=true;
-    if(window._phantom||window.callPhantom||window.__nightmare) D=true;
-    if(window.__selenium_unwrapped||window.__webdriver_evaluate||window.__driver_evaluate||
-       window.__webdriver_script_fn||window.__fxdriver_evaluate||window.__selenium_evaluate) D=true;
-    if(window.Cypress||window.__pw_manual||window.__playwright||
-       window._puppeteer||window.__puppeteer_evaluation_script__) D=true;
-    if(navigator.languages && navigator.languages.length===0) D=true;
-    if(D){
-      try{
-        var html=document.documentElement;
-        html.innerHTML='<head><meta charset="utf-8"><title>受保護內容</title></head><body></body>';
-      }catch(e){}
-      var sh=document.createElement('div');
-      sh.setAttribute('id','bxBotShield');
-      sh.setAttribute('style','position:fixed;inset:0;z-index:2147483647;'+
-        'background:#1e1a14;color:#c4a76c;display:flex;align-items:center;justify-content:center;'+
-        'font:16px/1.8 "Noto Sans TC","Microsoft JhengHei",sans-serif;text-align:center;padding:40px;');
-      sh.innerHTML='<div><div style="color:#d4a84b;font-size:20px;margin-bottom:16px;">本頁內容受保護</div>'+
-        '偵測到自動化/爬蟲環境，內容無法顯示。<br>請在正常瀏覽器中訪問原站。</div>';
-      (document.body||document.documentElement).appendChild(sh);
-    }
-  }catch(e){}
-})();
-</script>
-<!-- 下載混淆層四：本機開啟警示 -->
-<div id="wy-offline-shield" style="display:none;position:fixed;inset:0;z-index:9999;
-  background:radial-gradient(ellipse at center,#1e1a14,#05040a 90%);
-  color:#d4a84b;align-items:center;justify-content:center;
-  font-family:'Noto Serif TC','Source Han Serif TC',serif;
-  text-align:center;padding:40px;">
-  <div>
-    <div style="font-size:52px;margin-bottom:18px;color:#b8860b;">⚠</div>
-    <h3 style="font-size:26px;letter-spacing:10px;margin:0 0 14px;color:#d4a84b;">本 頁 須 線 上 閱 讀</h3>
-    <p style="font-size:15.5px;letter-spacing:2px;line-height:2;color:#c4a76c;max-width:560px;margin:0 auto;">
-      本彙整本為線上閱讀版，禁止離線下載。<br>
-      若您偶然得到此檔，歡迎前往原站結緣閱讀：<br>
-      <a href="https://www.youtube.com/@Chengweiwen/" target="_blank" rel="noopener"
-         style="color:#d4a84b;border-bottom:1px dotted #b8860b;margin:0 4px;">https://www.youtube.com/@Chengweiwen/</a>
-    </p>
-  </div>
-</div>
- for child centering to work */
-.gate-body {
-  display: block;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  font-size: 19px !important;
-  line-height: 2.1 !important;
-}
-/* Ensure internal containers stay centered and padded */
-.gate-body main,
-.gate-body .container {
-  max-width: 900px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 28px !important;
-  padding-right: 28px !important;
-}
-
-/* Override all internal nav bars inside gates:
-   - Remove fixed/sticky positioning (conflicts with master nav)
-   - Force light readable backgrounds */
-.gate-body nav {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  background: rgba(245,240,232,0.97) !important;
-  backdrop-filter: blur(8px);
-  color: #2c2c2c !important;
-  border-bottom: 1px solid #d4cfc5 !important;
-  padding-left: 64px !important;
-}
-.gate-body nav a {
-  color: #555 !important;
-}
-.gate-body nav a:hover,
-.gate-body nav a.active {
-  color: #8b7332 !important;
-}
-
-/* Sidebar */
-.sidebar-toggle {
-  position: fixed; top: 16px; left: 16px;
-  z-index: 1001; background: #1a1f2e;
-  border: 1px solid #2a3040; color: #c9a84c;
-  width: 44px; height: 44px; border-radius: 8px;
-  cursor: pointer; font-size: 1.3em;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s;
-}
-.sidebar-toggle:hover { background: rgba(201,168,76,0.15); }
-.sidebar {
-  position: fixed; top: 0; left: -300px;
-  width: 280px; height: 100vh;
-  background: #1a1f2e;
-  border-right: 1px solid #2a3040;
-  z-index: 1000; transition: left 0.3s ease;
-  overflow-y: auto; padding: 70px 16px 20px;
-}
-.sidebar.open { left: 0; }
-.sidebar-overlay {
-  display: none; position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5); z-index: 999;
-}
-.sidebar-overlay.open { display: block; }
-.sidebar .nav-item {
-  display: block; padding: 10px 14px;
-  color: #8b949e; text-decoration: none;
-  border-radius: 6px; margin-bottom: 4px;
-  font-size: 0.95em; transition: all 0.2s;
-}
-.sidebar .nav-item:hover, .sidebar .nav-item.active {
-  background: rgba(201,168,76,0.1); color: #c9a84c;
-}
-.sidebar .nav-num { font-weight: 700; margin-right: 8px; color: #8b7332; }
-
-/* Footer */
-.master-footer {
-  text-align: center; padding: 40px 20px;
-  background: #1a1f2e;
-  border-top: 1px solid #2a3040;
-  color: #8b949e; font-size: 0.9em;
-}
-.master-footer .footer-title {
-  font-family: 'Noto Serif TC', serif;
-  color: #8b7332; font-size: 1.1em; margin-bottom: 8px;
-}
-
-@media (max-width: 768px) {
-  .toc-grid { grid-template-columns: 1fr; }
-  .master-hero h1 { font-size: 2em; }
-}
-@media print {
-  .sidebar, .sidebar-toggle, .sidebar-overlay { display: none !important; }
-  .gate-nav-header { position: relative; }
-}
-
-/* ===== 防複製 ===== */
-body {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-</style>
 <style>
 /* ===========================================
    SCOPED GATE STYLES
@@ -4058,20 +3723,8 @@ body {
   .g-gate12 nav.toc { margin: -20px 12px 30px; padding: 20px 22px; }
 }
 </style>
-<meta content="v1" name="wy-obfuscated"/>
-<style data-wy-obfs="v2">
-@media print{
-  html,body{background:#fff!important;}
-  body *{visibility:hidden!important;}
-  body::after{
-    content:"本頁內容受保護，禁止列印。\A請前往原站閱讀";
-    white-space:pre;
-    visibility:visible;position:fixed;top:40%;left:0;right:0;
-    text-align:center;font-size:22px;color:#333;letter-spacing:4px;
-    font-family:"Noto Serif TC",serif;
-  }
-}
-</style>
+
+
 </head>
 <body>
 <button aria-label="切換導航" class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
@@ -8449,42 +8102,6 @@ document.addEventListener('cut', function(e) { e.preventDefault(); });
     ns[i].removeAttribute('data-wy-t');
   }
 })();</script>
-<script data-wy-obfs="v2">
-(function(){
-  /* 第四層：file:// 協定偵測（必須最優先，放在解碼前） */
-  if(location.protocol==='file:'){
-    var sh=document.getElementById('wy-offline-shield');
-    if(sh){ sh.style.display='flex'; }
-    try{ document.querySelectorAll('iframe[data-src],iframe.ch-frame').forEach(function(f){ f.remove(); }); }catch(e){}
-    return;
-  }
-  /* 第一層：base64 → srcdoc runtime 解碼 */
-  try{
-    var dec=new TextDecoder('utf-8');
-    document.querySelectorAll('iframe[data-src]').forEach(function(f){
-      try{
-        var b64=f.getAttribute('data-src');
-        var bin=atob(b64);
-        var bytes=new Uint8Array(bin.length);
-        for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
-        f.setAttribute('srcdoc', dec.decode(bytes));
-        f.removeAttribute('data-src');
-      }catch(e){}
-    });
-  }catch(e){}
-  /* 第二層：鍵盤快捷鍵 · Cmd/Ctrl 雙覆蓋 */
-  document.addEventListener('keydown',function(e){
-    var k=(e.key||'').toLowerCase();
-    var mod=e.ctrlKey||e.metaKey;
-    if(mod && ['s','p','u','a','c','x'].indexOf(k)!==-1){ e.preventDefault();e.stopPropagation();}
-    if(k==='f12') e.preventDefault();
-    if(mod && e.shiftKey && ['i','j','c','k'].indexOf(k)!==-1){ e.preventDefault();}
-  },true);
-  /* 第三層：列印攔截 */
-  window.addEventListener('beforeprint',function(){ document.body.style.visibility='hidden'; });
-  window.addEventListener('afterprint',function(){ document.body.style.visibility=''; });
-  try{ window.print=function(){ return false; }; }catch(e){}
-})();
-</script>
+
 </body>
 </html>
