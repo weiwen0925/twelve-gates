@@ -116,9 +116,12 @@ a{color:inherit;text-decoration:none;}
   letter-spacing:.6px;color:var(--goldL);line-height:1.25;flex:1;
   word-break:keep-all;}
 
-#sbToggle{position:fixed;top:14px;left:14px;z-index:110;display:none;
-  width:42px;height:42px;border-radius:50%;background:var(--sbBg);color:var(--goldL);
-  border:1px solid rgba(184,134,11,.5);font-size:20px;cursor:pointer;}
+#sbToggle{position:fixed;top:14px;left:14px;z-index:200;display:none;
+  width:48px;height:48px;border-radius:50%;background:var(--sbBg);color:var(--goldL);
+  border:1.5px solid var(--goldL);font-size:22px;cursor:pointer;line-height:1;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);
+  align-items:center;justify-content:center;padding:0;font-weight:700;}
+#sbToggle:hover{background:#2a2218;color:#fff;}
 
 /* ====== Main ====== */
 .main{margin-left:var(--sbW);min-height:100vh;}
@@ -268,10 +271,13 @@ a{color:inherit;text-decoration:none;}
 @media (max-width:900px){
   #sb{transform:translateX(-100%);transition:transform .25s;}
   #sb.open{transform:translateX(0);}
-  #sbToggle{display:flex;align-items:center;justify-content:center;}
+  #sbToggle{display:flex!important;align-items:center!important;justify-content:center!important;}
   .main{margin-left:0;}
   .hero-title{font-size:46px;letter-spacing:5px;}
   .ch-name{font-size:28px;letter-spacing:4px;}
+  /* 漢堡開啟時加暗罩，視覺更清楚 */
+  #sb.open::after{content:'';position:fixed;top:0;left:var(--sbW);right:0;bottom:0;
+    background:rgba(0,0,0,.35);z-index:99;pointer-events:auto;}
 }
 @media (max-width:600px){
   body{font-size:15.5px;}
@@ -403,7 +409,7 @@ body{font-size:20px!important;}
 <div class="rp-bar"><div class="rp-fill" id="rpFill"></div></div>
 <span class="rp-pct" id="rpPct">0%</span>
 </div>
-<aside id="sb"><div class="sb-head"><a class="sb-brand" href="#top" id="sbBrand" title="回到頂部"><span class="sb-brand-line1" data-wytext="kvSskM3pheDlxcz3"></span><span class="sb-brand-line2" data-wytext="kvyFkfrSicv8y/LV" id="sbBrandLine2"></span><span class="sb-brand-arrow" data-wytext="lf+8VCMqPA=="></span></a><div class="sb-quick"><a class="sb-qbtn" data-wytext="nt+7VJ7F7Q==" href="#top" id="sbHome"></a><a class="sb-qbtn" data-wytext="kOKDVJHJzQ==" href="#sbToc" id="sbTocBtn"></a></div><div class="sb-now is-preface" id="sbNow"><div class="sb-now-lbl" data-wytext="kOKDkf7oheDUxcnh"></div><div class="sb-now-name" data-wytext="kM6FnPfgif/oxc/hVKfEDZGq2Z+B1Q==" id="sbNowName"></div><div class="sb-now-bar"><div class="sb-now-fill" id="sbNowFill"></div></div><div class="sb-now-pct" id="sbNowPct">0%</div></div></div><nav class="sb-nav"><a class="sb-item" data-ch="1" data-fullname="第一門 · 觀因緣門" data-name="第一門" data-sub="眾緣所生 · 無有自性" href="#chapter-1"><span class="sb-circle" data-wytext="k8Gt"></span><span class="sb-label" data-wytext="n96tkezFi8HG"></span></a><a class="sb-item" data-ch="2" data-fullname="第二門 · 觀有果無果門" data-name="第二門" data-sub="因果邏輯的終極解構" href="#chapter-2"><span class="sb-circle" data-wytext="k8Oh"></span><span class="sb-label" data-wytext="n96tkuvsiuj5yuPAkvvv"></span></a><a class="sb-item" data-ch="3" data-fullname="第三門 · 觀緣門" data-name="第三門" data-sub="四緣破執 · 空性顯發" href="#chapter-3"><span class="sb-circle" data-wytext="k8Gk"></span><span class="sb-label" data-wytext="n96tk8DG"></span></a><a class="sb-item" data-ch="4" data-fullname="第四門 · 觀相門" data-name="第四門" data-sub="能所實體的理路解剖" href="#chapter-4"><span class="sb-circle" data-wytext="kuK2"></span><span class="sb-label" data-wytext="n96tk+zd"></span></a><a class="sb-item" data-ch="5" data-fullname="第五門 · 觀有相無相門" data-name="第五門" data-sub="相與可相之寂滅" href="#chapter-5"><span class="sb-circle" data-wytext="k8O5"></span><span class="sb-label" data-wytext="n96tkuvsi/LEyvzZ"></span></a><a class="sb-item" data-ch="6" data-fullname="第六門 · 觀一異門" data-name="第六門" data-sub="一異關係的邏輯解剖" href="#chapter-6"><span class="sb-circle" data-wytext="kvyA"></span><span class="sb-label" data-wytext="n96tkM/li+PV"></span></a><a class="sb-item" data-ch="7" data-fullname="第七門 · 觀有無門" data-name="第七門" data-sub="本體論之解構藍圖" href="#chapter-7"><span class="sb-circle" data-wytext="k8Gu"></span><span class="sb-label" data-wytext="n96tkuvsi/LE"></span></a><a class="sb-item" data-ch="8" data-fullname="第八門 · 觀性門" data-name="第八門" data-sub="諸法無性 · 一切法空" href="#chapter-8"><span class="sb-circle" data-wytext="kvyG"></span><span class="sb-label" data-wytext="n96tkvfC"></span></a><a class="sb-item" data-ch="9" data-fullname="第九門 · 觀因果門" data-name="第九門" data-sub="空間、移動與空性的邏輯拓樸" href="#chapter-9"><span class="sb-circle" data-wytext="k8Cw"></span><span class="sb-label" data-wytext="n96tkezFiuj5"></span></a><a class="sb-item" data-ch="10" data-fullname="第十門 · 觀作者門" data-name="第十門" data-sub="業 · 作者 · 受者的三重解構" href="#chapter-10"><span class="sb-circle" data-wytext="kvSs"></span><span class="sb-label" data-wytext="n96tkMr5hPbg"></span></a><a class="sb-item" data-ch="11" data-fullname="第十一門 · 觀三時門" data-name="第十一門" data-sub="三時因果邏輯解構" href="#chapter-11"><span class="sb-circle" data-wytext="kvSskM/l"></span><span class="sb-label" data-wytext="n96tkM/siu/n"></span></a><a class="sb-item" data-ch="12" data-fullname="第十二門 · 觀生門" data-name="第十二門" data-sub="諸法無生 · 畢竟空寂" href="#chapter-12"><span class="sb-circle" data-wytext="kvSskM3p"></span><span class="sb-label" data-wytext="n96tk+P6"></span></a></nav><div class="sb-divider"></div><div class="sb-related-lbl" data-wytext="kOKVVJ7y8FaMu9ZBnMvz"></div><div class="sb-extlist"><a class="sb-extlink" href="https://weiwen0925.github.io/nagarjuna-mulamadhyamakakarika/" rel="noopener noreferrer" target="_blank" title="龍樹菩薩造 · 中觀根本頌（新分頁開啟）"><span class="sb-ext-icon" data-wytext="k8GA"></span><span class="sb-ext-title" data-wytext="k8GAnNzz"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/bailun/" rel="noopener noreferrer" target="_blank" title="提婆菩薩造 · 破外道論（新分頁開啟）"><span class="sb-ext-icon" data-wytext="kOCT"></span><span class="sb-ext-title" data-wytext="kOCTnNzz"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/dazhidulun-0/" rel="noopener noreferrer" target="_blank" title="龍樹菩薩造 · 釋大品般若（新分頁開啟）"><span class="sb-ext-icon" data-wytext="keCX"></span><span class="sb-ext-title" data-wytext="kt2Kku7ficzDxcz3"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/vigrahavyavartani/" rel="noopener noreferrer" target="_blank" title="龍樹菩薩造 · 破他宗難之自釋（新分頁開啟）"><span class="sb-ext-icon" data-wytext="n9Kg"></span><span class="sb-ext-title" data-wytext="n8aZnNzohN3z"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/pratyutpanna-samadhi-sutra/" rel="noopener noreferrer" target="_blank" title="現前見佛念佛三昧（新分頁開啟）"><span class="sb-ext-icon" data-wytext="n/Gy"></span><span class="sb-ext-title" data-wytext="n/GBnP/6iM7sy//Gk9Pg"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/zuochan-sanmei-jing/" rel="noopener noreferrer" target="_blank" title="鳩摩羅什譯 · 禪法要典（新分頁開啟）"><span class="sb-ext-icon" data-wytext="kN+H"></span><span class="sb-ext-title" data-wytext="kuS9k9HPiM7sy//Gk9Pg"></span></a></div></aside><div class="main">
+<aside id="sb"><div class="sb-head"><a class="sb-brand" href="#top" id="sbBrand" title="回到頂部"><span class="sb-brand-line1" data-wytext="kvSskM3pheDlxcz3"></span><span class="sb-brand-line2" data-wytext="kvyFkfrSicv8y/LV" id="sbBrandLine2"></span><span class="sb-brand-arrow" data-wytext="lf+8VCMqPA=="></span></a><div class="sb-quick"><a class="sb-qbtn" data-wytext="nt+7VJ7F7Q==" href="#top" id="sbHome"></a><a class="sb-qbtn" data-wytext="kOKDVJHJzQ==" href="#sbToc" id="sbTocBtn"></a></div><div class="sb-now is-preface" id="sbNow"><div class="sb-now-lbl" data-wytext="kOKDkf7oheDUxcnh"></div><div class="sb-now-name" data-wytext="kM6FnPfgif/oxc/hVKfEDZGq2Z+B1Q==" id="sbNowName"></div><div class="sb-now-bar"><div class="sb-now-fill" id="sbNowFill"></div></div><div class="sb-now-pct" id="sbNowPct">0%</div></div></div><nav class="sb-nav"><a class="sb-item" data-ch="1" data-fullname="第一門 · 觀因緣門" data-name="第一門" data-sub="眾緣所生 · 無有自性" href="#chapter-1"><span class="sb-circle" data-wytext="k8Gt"></span><span class="sb-label" data-wytext="n96tkezFi8HG"></span></a><a class="sb-item" data-ch="2" data-fullname="第二門 · 觀有果無果門" data-name="第二門" data-sub="因果邏輯的終極解構" href="#chapter-2"><span class="sb-circle" data-wytext="k8Oh"></span><span class="sb-label" data-wytext="n96tkuvsiuj5yuPAkvvv"></span></a><a class="sb-item" data-ch="3" data-fullname="第三門 · 觀緣門" data-name="第三門" data-sub="四緣破執 · 空性顯發" href="#chapter-3"><span class="sb-circle" data-wytext="k8Gk"></span><span class="sb-label" data-wytext="n96tk8DG"></span></a><a class="sb-item" data-ch="4" data-fullname="第四門 · 觀相門" data-name="第四門" data-sub="能所實體的理路解剖" href="#chapter-4"><span class="sb-circle" data-wytext="kuK2"></span><span class="sb-label" data-wytext="n96tk+zd"></span></a><a class="sb-item" data-ch="5" data-fullname="第五門 · 觀有相無相門" data-name="第五門" data-sub="相與可相之寂滅" href="#chapter-5"><span class="sb-circle" data-wytext="k8O5"></span><span class="sb-label" data-wytext="n96tkuvsi/LEyvzZ"></span></a><a class="sb-item" data-ch="6" data-fullname="第六門 · 觀一異門" data-name="第六門" data-sub="一異關係的邏輯解剖" href="#chapter-6"><span class="sb-circle" data-wytext="kvyA"></span><span class="sb-label" data-wytext="n96tkM/li+PV"></span></a><a class="sb-item" data-ch="7" data-fullname="第七門 · 觀有無門" data-name="第七門" data-sub="本體論之解構藍圖" href="#chapter-7"><span class="sb-circle" data-wytext="k8Gu"></span><span class="sb-label" data-wytext="n96tkuvsi/LE"></span></a><a class="sb-item" data-ch="8" data-fullname="第八門 · 觀性門" data-name="第八門" data-sub="諸法無性 · 一切法空" href="#chapter-8"><span class="sb-circle" data-wytext="kvyG"></span><span class="sb-label" data-wytext="n96tkvfC"></span></a><a class="sb-item" data-ch="9" data-fullname="第九門 · 觀因果門" data-name="第九門" data-sub="空間、移動與空性的邏輯拓樸" href="#chapter-9"><span class="sb-circle" data-wytext="k8Cw"></span><span class="sb-label" data-wytext="n96tkezFiuj5"></span></a><a class="sb-item" data-ch="10" data-fullname="第十門 · 觀作者門" data-name="第十門" data-sub="業 · 作者 · 受者的三重解構" href="#chapter-10"><span class="sb-circle" data-wytext="kvSs"></span><span class="sb-label" data-wytext="n96tkMr5hPbg"></span></a><a class="sb-item" data-ch="11" data-fullname="第十一門 · 觀三時門" data-name="第十一門" data-sub="三時因果邏輯解構" href="#chapter-11"><span class="sb-circle" data-wytext="kvSskM/l"></span><span class="sb-label" data-wytext="n96tkM/siu/n"></span></a><a class="sb-item" data-ch="12" data-fullname="第十二門 · 觀生門" data-name="第十二門" data-sub="諸法無生 · 畢竟空寂" href="#chapter-12"><span class="sb-circle" data-wytext="kvSskM3p"></span><span class="sb-label" data-wytext="n96tk+P6"></span></a></nav><div class="sb-divider"></div><div class="sb-related-lbl" data-wytext="kOKVVJ7y8FaMu9ZBnMvz"></div><div class="sb-extlist"><a class="sb-extlink" href="https://weiwen0925.github.io/vigrahavyavartani/" rel="noopener noreferrer" target="_blank" title="龍樹菩薩造 · 破他宗難之自釋（新分頁開啟）"><span class="sb-ext-icon" data-wytext="n9Kg"></span><span class="sb-ext-title" data-wytext="n8aZnNzohN3z"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/zuochan-sanmei-jing/" rel="noopener noreferrer" target="_blank" title="鳩摩羅什譯 · 禪法要典（新分頁開啟）"><span class="sb-ext-icon" data-wytext="kN+H"></span><span class="sb-ext-title" data-wytext="kuS9k9HPiM7sy//Gk9Pg"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/dazhidulun-0/" rel="noopener noreferrer" target="_blank" title="龍樹菩薩造 · 釋大品般若（新分頁開啟）"><span class="sb-ext-icon" data-wytext="keCX"></span><span class="sb-ext-title" data-wytext="kt2Kku7ficzDxcz3"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/pratyutpanna-samadhi-sutra/" rel="noopener noreferrer" target="_blank" title="現前見佛念佛三昧（新分頁開啟）"><span class="sb-ext-icon" data-wytext="n/Gy"></span><span class="sb-ext-title" data-wytext="n/GBnP/6iM7sy//Gk9Pg"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/nagarjuna-mulamadhyamakakarika/" rel="noopener noreferrer" target="_blank" title="龍樹菩薩造 · 中觀根本頌（新分頁開啟）"><span class="sb-ext-icon" data-wytext="k8GA"></span><span class="sb-ext-title" data-wytext="k8GAnNzz"></span></a><a class="sb-extlink" href="https://weiwen0925.github.io/twelve-gates/" rel="noopener noreferrer" target="_blank" title="本論線上正式網址（新分頁開啟）"><span class="sb-ext-icon" data-wytext="nu+t"></span><span class="sb-ext-title" data-wytext="kvSskM3pheDlxcz3"></span></a></div></aside><div class="main">
 <div class="site-hero">
 <div class="hero-tag" data-wytext="k8GAnNDlitbcy/vNnM7lyPOJ"></div>
 <h1 class="hero-title" data-wytext="kvSskM3pheDlxcz3"></h1>
@@ -707,7 +713,26 @@ if(sbBrand){
 var sbToggle = document.getElementById('sbToggle');
 var sb = document.getElementById('sb');
 if(sbToggle && sb){
-  sbToggle.addEventListener('click', function(){ sb.classList.toggle('open'); });
+  sbToggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    sb.classList.toggle('open');
+  });
+  // 手機：點側欄內錨點項目自動關閉
+  sb.addEventListener('click', function(e){
+    if(window.innerWidth > 900) return;
+    var a = e.target;
+    while(a && a.tagName !== 'A') a = a.parentElement;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    if(href.charAt(0) === '#'){ sb.classList.remove('open'); }
+  });
+  // 點側欄外的暗罩關閉
+  document.addEventListener('click', function(e){
+    if(window.innerWidth > 900) return;
+    if(!sb.classList.contains('open')) return;
+    if(sb.contains(e.target) || sbToggle.contains(e.target)) return;
+    sb.classList.remove('open');
+  });
 }
 
 /* === iframe auto-height (root-cause-fixed) === */
