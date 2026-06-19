@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+
+  <!-- ═══════════ 主頁（GitHub Pages 入口） ═══════════ -->
+  <url>
+    <loc>https://weiwen0925.github.io/twelve-gates/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://weiwen0925.github.io/twelve-gates/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://weiwen0925.github.io/twelve-gates/"/>
+    <image:image>
+      <image:loc>https://weiwen0925.github.io/twelve-gates/og-cover.png</image:loc>
+      <image:title>十二門論 · 龍樹菩薩造 · 鳩摩羅什譯</image:title>
+      <image:caption>十二門論全卷十二品彙整閱讀本 · 中觀根本論典之一</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══════════ index.html 顯式入口（可選，與根目錄等價） ═══════════ -->
+  <url>
+    <loc>https://weiwen0925.github.io/twelve-gates/index.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
