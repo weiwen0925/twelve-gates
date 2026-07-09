@@ -1374,5 +1374,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP3:END-->
+<!--WY-TGP4:BEGIN-->
+<style id="wy-tgp4-css">
+.tgp4-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp4-fabbox.show{display:block;}
+.tgp4-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp4-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp4-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp4-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp4-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp4-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp4-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp4-modal.open{display:flex;}
+.tgp4-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp4-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp4-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp4-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp4-close:hover{background:#e3d5b8;}
+.tgp4-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp4-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp4-tbl th,.tgp4-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp4-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp4-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp4-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp4-tbl b{color:#8b2500;}
+.tgp4-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp4-note b{color:#8b2500;}
+@media(max-width:900px){.tgp4-fabbox{right:14px;}.tgp4-tbl{font-size:11.5px;}.tgp4-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp4-fabbox" id="tgp4Box"><button class="tgp4-btn" id="tgp4Btn" type="button" aria-label="開啟全景總表"><span class="tgp4-ic">▦</span><span class="tgp4-ls"><span class="tgp4-l1">本品 · 觀相門第四</span><span class="tgp4-l2">生住滅雙鎖 · 燈明喻三刀瓦解</span></span></button></div><div class="tgp4-modal" id="tgp4Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp4-card"><button class="tgp4-close" id="tgp4Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀相門第四 · 全景總表</h3><p class="sub">十二門論·第四門｜有為無為俱無相・生住滅雙刃論破・七法共生救援之破・燈明喻三刀・三事皆空終極等式</p><table class="tgp4-tbl"><caption>一、破題與雙刃論破（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>破題偈頌</td><td>有為及無為，二法俱無相；以無有相故，二法則皆空——「俱」字最關鍵，兩大範疇一網打盡</td></tr><tr><td>生住滅設問</td><td>萬物各有有為相（牛角瓶底車輪人頭），有為法之相歸為生住滅；此三相本身為有為抑或無為？</td></tr><tr><td>雙刃偈頌</td><td>若生是有為，復應有三相；若生是無為，何名有為相？——二選一皆陷困境，定義者無法定義自身</td></tr><tr><td>第一刃·若生是無為</td><td>無為法不可分別、不變化，如何能用一個不變化的東西充當標示變化的座標？</td></tr><tr><td>第二刃·若生是有為</td><td>即應有三相，三相復應有三相，如是展轉則為無窮——同類自指的無窮回溯</td></tr></tbody></table><table class="tgp4-tbl"><caption>二、七法共生救援與燈明喻三刀</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>七法共生模型</td><td>法生時通自體七法共生（法·生·住·滅·生生·住住·滅滅），本生生生互相生形成封閉迴圈以避無窮過</td></tr><tr><td>時間差致命一擊</td><td>生生從本生生，本生實自未生，云何能生生生？——未生者本身不存在，無從發揮能生之力</td></tr><tr><td>燈明喻登場</td><td>如燈然時能自照亦照彼——龍樹重新定義「照」的內涵：照＝破闇，而非燈本身獨立屬性</td></tr><tr><td>空間幾何證明</td><td>燈中自無闇，住處亦無闇，破闇乃名照，燈為何所照？——燈體與周圍皆無闇，燈就沒有可破除的對象</td></tr><tr><td>對稱性測試</td><td>若燈能自照亦能照彼，闇亦應自蔽亦蔽彼——闇顯然不能自蔽，證明「自照亦照彼」並非普遍命題</td></tr></tbody></table><table class="tgp4-tbl"><caption>三、自生論破與終極等式</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>自生決勝偈</td><td>此生若未生，云何能自生？若生已自生，已生何用生？——未生者無作用，已生者不須再生，兩刃合擊自性作用徹底崩解</td></tr><tr><td>骨牌一·有為法空</td><td>生住滅有為相不成故，有為法空——沒有定義邊界的標籤，現象失去成立依據</td></tr><tr><td>骨牌二·無為亦空</td><td>滅有為名無為涅槃，有為法空故無為法亦空——涅槃僅是相對於有為法的息滅而立</td></tr><tr><td>眾衣喻的破斥</td><td>對比基礎（有為相／有相衣）已被前六章證明不存在，故無相衣喻涅槃無相之說站不住腳，伏筆留待第五門廣說</td></tr><tr><td>終極等式</td><td>有為、無為法空故，我亦空；三事空故，一切法皆空——回歸中論「諸法不自生」的根本立場</td></tr></tbody></table><p class="tgp4-note">本門的終極哲學貢獻，是把「能所」二分的實體化錯覺徹底拆穿——能生能照能襯托的一方，與所生所照所襯托的一方，皆非獨立實體，而是依緣起如幻顯現。從生住滅之相的雙鎖困局，經七法共生救援之破、燈明喻三刀瓦解，一路推演至<b>三事皆空</b>，正是《中論》「諸法不自生，亦不從他生，不共不無因，是故知無生」的具體演繹。</p></div></div>
+<script id="wy-tgp4-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp4Btn"),BOX=document.getElementById("tgp4Box"),MODAL=document.getElementById("tgp4Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=3;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp4Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP4:END-->
 </body>
 </html>
