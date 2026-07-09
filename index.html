@@ -1245,5 +1245,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP11:END-->
+<!--WY-TGP12:BEGIN-->
+<style id="wy-tgp12-css">
+.tgp12-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp12-fabbox.show{display:block;}
+.tgp12-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp12-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp12-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp12-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp12-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp12-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp12-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp12-modal.open{display:flex;}
+.tgp12-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp12-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp12-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp12-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp12-close:hover{background:#e3d5b8;}
+.tgp12-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp12-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp12-tbl th,.tgp12-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp12-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp12-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp12-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp12-tbl b{color:#8b2500;}
+.tgp12-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp12-note b{color:#8b2500;}
+@media(max-width:900px){.tgp12-fabbox{right:14px;}.tgp12-tbl{font-size:11.5px;}.tgp12-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp12-fabbox" id="tgp12Box"><button class="tgp12-btn" id="tgp12Btn" type="button" aria-label="開啟全景總表"><span class="tgp12-ic">▦</span><span class="tgp12-ls"><span class="tgp12-l1">本品 · 觀生門第十二</span><span class="tgp12-l2">生不生生時三時遮詮 · 一切法無生</span></span></button></div><div class="tgp12-modal" id="tgp12Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp12-card"><button class="tgp12-close" id="tgp12Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀生門第十二 · 全景總表</h3><p class="sub">十二門論·第十二門（末門）｜生已不生不生亦不生生時亦不生・兔角喻二生過無行處・八不中道之首總結</p><table class="tgp12-tbl"><caption>一、根本頌與破「已生」「未生」（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>根本頌</td><td>生果則不生，不生亦不生，離是生不生，生時亦不生——窮盡已生未生生時三個時間維度</td></tr><tr><td>破已生</td><td>是生生已不生：有無窮過（生生已復生第二生第三生展轉無窮）、作已更作過（作已不應作、燒已不應燒、證已不應證）</td></tr><tr><td>破未生</td><td>不生法亦不生，不與生合故；若不生法生則離生有生則壞世俗法（離作有作、離去有去、離食有食）</td></tr><tr><td>兔角喻極致推演</td><td>若一切不生法皆應生，則凡夫未證菩提皆應生、阿羅漢煩惱不生而生、兔馬等角不生而生——顯然荒謬</td></tr><tr><td>敵論因緣條件解圍與再破</td><td>方便眾緣和合時方作，非一切不生而生；然龍樹以先定有先無先有無三路推檢，條件網絡中依然求生不可得</td></tr></tbody></table><table class="tgp12-tbl"><caption>二、破「生時」與骨牌效應</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>生時本質</td><td>生時名始起未成，實為生分（已生）加未生分（未生）的拼湊，剝離之後根本沒有獨立的生時</td></tr><tr><td>二生過</td><td>若人說生時生，則有二生：以生時為生、以生時生——事物明明只有一個實體，云何言有二生</td></tr><tr><td>無行處</td><td>未有生，無生時，生於何處行？——找不到動態動作運作的立足點</td></tr><tr><td>三時推檢總結表</td><td>生果已生（無窮過作已更作）·不生法未生（壞世俗法兔角生）·生時現在（二生過無行處）——三皆不生</td></tr><tr><td>存在解構總藍圖</td><td>生不成→住滅亦不成→有為法不成→無為法不成→眾生不成→一切法無生畢竟空寂</td></tr></tbody></table><table class="tgp12-tbl"><caption>三、中觀心法與八不中道之首</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>電影膠片定格</td><td>凍結時間逐格檢視：事物要嘛已經具備形態（無須生）要嘛完全不存在（生不出），無神秘連續過渡帶</td></tr><tr><td>假名本質</td><td>生只是大腦把無數因緣剎那變化打包貼上的概念標籤（假名Prajñapti），沒有固定不變獨立自存的實體自性</td></tr><tr><td>中論映射</td><td>已去無有去，未去亦無去，離已去未去，去時亦無去——三時遮詮法對「去」與「生」的完美映射同構</td></tr><tr><td>八不中道之首</td><td>不生亦不滅，不常亦不斷，不一亦不異，不來亦不出——「不生」為八不總綱之首，破不生即破其餘七不</td></tr><tr><td>圓滿結語</td><td>是故當知一切法無生，畢竟空寂故——非虛無斷滅，而是無戲論無煩惱障礙的法界實相</td></tr></tbody></table><p class="tgp12-note">觀生門作為《十二門論》壓軸終章，把解構的刀刃揮向萬物存在的最起點——「生」本身：已生不須再生、未生無可生之載體、生時只是無厚度的虛擬交界，三時窮盡而生不可得，住滅有為無為眾生隨之骨牌式瓦解。<b>「不生」正是《中論》八不中道之首</b>，一破則七破；全論十二門至此收束於「一切法無生，畢竟空寂」的法界實相，剝除一切概念執著，展露的並非虛無，而是萬法得以呼吸的緣起網絡。</p></div></div>
+<script id="wy-tgp12-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp12Btn"),BOX=document.getElementById("tgp12Box"),MODAL=document.getElementById("tgp12Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=11;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp12Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP12:END-->
 </body>
 </html>
