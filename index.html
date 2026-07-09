@@ -1321,5 +1321,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP2:END-->
+<!--WY-TGP3:BEGIN-->
+<style id="wy-tgp3-css">
+.tgp3-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp3-fabbox.show{display:block;}
+.tgp3-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp3-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp3-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp3-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp3-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp3-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp3-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp3-modal.open{display:flex;}
+.tgp3-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp3-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp3-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp3-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp3-close:hover{background:#e3d5b8;}
+.tgp3-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp3-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp3-tbl th,.tgp3-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp3-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp3-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp3-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp3-tbl b{color:#8b2500;}
+.tgp3-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp3-note b{color:#8b2500;}
+@media(max-width:900px){.tgp3-fabbox{right:14px;}.tgp3-tbl{font-size:11.5px;}.tgp3-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp3-fabbox" id="tgp3Box"><button class="tgp3-btn" id="tgp3Btn" type="button" aria-label="開啟全景總表"><span class="tgp3-ic">▦</span><span class="tgp3-ls"><span class="tgp3-l1">本品 · 觀緣門第三</span><span class="tgp3-l2">四緣俱破 · 泥牛奶空盒歸謬</span></span></button></div><div class="tgp3-modal" id="tgp3Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp3-card"><button class="tgp3-close" id="tgp3Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀緣門第三 · 全景總表</h3><p class="sub">十二門論·第三門｜緣中無果大前提・四緣定義俱破・何不從非緣出・果不生故緣亦不生・遞迴清空</p><table class="tgp3-tbl"><caption>一、核心大前提與四緣俱破（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>核心偈頌</td><td>廣略眾緣法，是中無有果；緣中若無果，云何從緣生？</td></tr><tr><td>狀態窮盡法</td><td>一一緣中無（單獨泥水輪皆不見瓶）、和合中亦無（集合仍是零加零，並不會憑空長出新實體）</td></tr><tr><td>四緣定義</td><td>因緣（直接主要生成條件）·次第緣（前滅開路後生）·緣緣（心識所攀緣之境）·增上緣（不障礙或促成之輔助條件）</td></tr><tr><td>大箭穿透四緣</td><td>同一大前提「緣中無果」套用四緣——因中有果則應離諸緣而有果，緣中有果則應離因而有果，二處俱無</td></tr><tr><td>自性不可得</td><td>以理推求而不可得，是故二處俱無——四緣作為世俗描述工具有其效用，但不具備勝義能生的實體力量</td></tr></tbody></table><table class="tgp3-tbl"><caption>二、終極歸謬與觀念轉向</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>何不從非緣出</td><td>若果緣中無而從緣中出，是果何不從非緣中而出？——泥土與牛奶同等「無果」，卻選擇性允許前者能生</td></tr><tr><td>破神秘生機</td><td>若允許無中生有，則種橘子可能長出蘋果，宇宙因果規律將徹底崩潰；此歸謬打擊的是「緣具實體能生力」的深層預設</td></tr><tr><td>觀念維度轉向</td><td>果不生故緣亦不生，以先緣後果故——緣之所以被稱為緣，是因為有果而立；果不成立，緣的定義瞬間瓦解</td></tr><tr><td>實體堆疊vs如幻聚合</td><td>凡夫視角是具自性方塊堆疊成具自性整體（金字塔）；中觀視角是如幻條件聚合出如幻現象（無中心緣起網）</td></tr><tr><td>時間軸崩解</td><td>T0未生無果、T生時果與緣若一則常住不變若異則兩者無關係、T1已生——「生」無論放在哪一格皆撞上自性對象不可指認的困境</td></tr></tbody></table><table class="tgp3-tbl"><caption>三、遞迴清空與體系互文</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>骨牌一</td><td>緣果無故，一切有為法空</td></tr><tr><td>骨牌二</td><td>一切有為法空故，無為法亦空</td></tr><tr><td>骨牌三</td><td>有為、無為空故，云何有我耶——四張骨牌從緣果一路碎形崩解至我</td></tr><tr><td>中論互文對讀</td><td>「緣中若無果，云何從緣生」對應中論「如諸法自性，不在於緣中」，三組命題呈現基因同源的邏輯骨架</td></tr><tr><td>三大記憶錨點</td><td>破四緣框架（勝義中無結果藏身處）、非緣歸謬口訣（緣中若無果，何不從非緣）、三法皆空遞迴（緣果→有為→無為→我）</td></tr></tbody></table><p class="tgp3-note">本門並不否認緣具世俗效用，只否認緣具勝義能生的實體力；「果不生故緣亦不生」一句，揭示緣與果乃相待而立的假名，非實體堆疊而是如幻聚合。從「緣中無果」的大前提，穿透四緣防線，再以泥土牛奶的空盒思想實驗歸謬到底，最終啟動遞迴清空——這正是<b>無生之生，唯有無自性方能隨順顯現</b>的中觀旨趣。</p></div></div>
+<script id="wy-tgp3-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp3Btn"),BOX=document.getElementById("tgp3Box"),MODAL=document.getElementById("tgp3Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=2;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp3Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP3:END-->
 </body>
 </html>
