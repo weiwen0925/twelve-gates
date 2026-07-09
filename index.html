@@ -1510,5 +1510,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP5:END-->
+<!--WY-TGP6:BEGIN-->
+<style id="wy-tgp6-css">
+.tgp6-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp6-fabbox.show{display:block;}
+.tgp6-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp6-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp6-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp6-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp6-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp6-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp6-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp6-modal.open{display:flex;}
+.tgp6-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp6-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp6-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp6-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp6-close:hover{background:#e3d5b8;}
+.tgp6-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp6-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp6-tbl th,.tgp6-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp6-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp6-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp6-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp6-tbl b{color:#8b2500;}
+.tgp6-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp6-note b{color:#8b2500;}
+@media(max-width:900px){.tgp6-fabbox{right:14px;}.tgp6-tbl{font-size:11.5px;}.tgp6-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp6-fabbox" id="tgp6Box"><button class="tgp6-btn" id="tgp6Btn" type="button" aria-label="開啟全景總表"><span class="tgp6-ic">▦</span><span class="tgp6-ls"><span class="tgp6-l1">本品 · 觀一異門第六</span><span class="tgp6-l2">一異俱不可得 · 指不自觸鐵則</span></span></button></div><div class="tgp6-modal" id="tgp6Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp6-card"><button class="tgp6-close" id="tgp6Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀一異門第六 · 全景總表</h3><p class="sub">十二門論·第六門｜相可相非一非異・外人三救援攻防・器官極限鐵則・不一不異辯證矩陣</p><table class="tgp6-tbl"><caption>一、核心偈頌與外人三救援（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>核心偈頌</td><td>相及與可相，一異不可得；若無有一異，是二云何成？——實有性下的二分檢驗，關係只能是一或異</td></tr><tr><td>外人主張一·相即可相</td><td>如識相是識，離所用識更無識——特徵即是本體，無須再分</td></tr><tr><td>外人主張二·相異可相</td><td>如滅愛名涅槃，愛是有為有漏、滅是無為無漏——相與可相是完全分立的兩個實體</td></tr><tr><td>外人主張三·少分是相</td><td>如正見是道之相，於道是少分——相只是可相裡的一部分，餘下部分是可相</td></tr><tr><td>空性推演公式</td><td>一不可得＋異亦不可得⇒是二則不成⇒相可相皆空⇒一切法皆空——窮盡選項的收網邏輯</td></tr></tbody></table><table class="tgp6-tbl"><caption>二、三破一擊與燈喻終局</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>破相即可相</td><td>三層辯難：不能自知（指不能自觸眼不能自見）、失去分別過（不應分別是相是可相）、因果混淆過（相是因可相是果不應為一）</td></tr><tr><td>破相異可相</td><td>失去連結不相干（滅愛與涅槃俱不異，信若無信則無此三事）、無窮過（相更復應有相則為無窮，無限套娃）</td></tr><tr><td>破少分是相</td><td>此義或在一中、或在異中，一異義先已破故，當知少分相亦破——依附在一異之上的第三條路同步崩塌</td></tr><tr><td>燈喻雙重打擊</td><td>燈喻早已在觀相門第四被破除；又自相矛盾——先說相可相異，今又說能自相亦能相彼，前後不一</td></tr><tr><td>器官極限鐵則</td><td>刀不自割、指不自觸、眼不自見——沒有任何實體能對自身產生作用，專破「相即可相」之主張</td></tr></tbody></table><table class="tgp6-tbl"><caption>三、體系對接與不一不異矩陣</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>名相虛幻總結</td><td>一不可得＋異不可得＋更無第三法⇒相可相俱空⇒一切法皆空——世界並非實體積木貼特徵標籤所組成</td></tr><tr><td>相待而有心法</td><td>停止尋找實體，開始看見關係——沒有特徵，實體在哪裡？沒有實體，特徵貼在誰身上？</td></tr><tr><td>不一不異辯證矩陣</td><td>為何不一：因為必須互相依賴，若一則無互相可言；為何不異：因為不可分割，若異則應能獨立存活而實不能</td></tr><tr><td>八不中道對接·畫與顏色</td><td>若相即可相（一），盲人摸畫應能摸到顏色；若相異可相（異），刮掉顏色畫仍應在——兩者皆不合經驗，故不一不異</td></tr><tr><td>無限套娃鐵則</td><td>承認絕對不同的兩實體有關聯，就必須引入第三媒介，媒介又需媒介連接，永無止盡——專破「相異可相」之主張</td></tr></tbody></table><p class="tgp6-note">本門直擊認知最底層的「相—可相」二元結構，以一異窮盡檢驗其實有性；不論主張一、異或少分，皆逃不過器官極限鐵則（指不自觸）與無限套娃鐵則的封殺。三救援盡破、燈喻雙挫，終究只能承認萬法<b>不一不異、相待而有</b>——這正是接通《中論》八不中道「不一不異」的關鍵橋樑，也是從名相虛構回到緣起實相的必經之門。</p></div></div>
+<script id="wy-tgp6-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp6Btn"),BOX=document.getElementById("tgp6Box"),MODAL=document.getElementById("tgp6Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=5;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp6Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP6:END-->
 </body>
 </html>
