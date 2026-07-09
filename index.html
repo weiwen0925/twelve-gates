@@ -1298,5 +1298,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP12:END-->
+<!--WY-TGP2:BEGIN-->
+<style id="wy-tgp2-css">
+.tgp2-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp2-fabbox.show{display:block;}
+.tgp2-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp2-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp2-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp2-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp2-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp2-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp2-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp2-modal.open{display:flex;}
+.tgp2-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp2-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp2-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp2-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp2-close:hover{background:#e3d5b8;}
+.tgp2-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp2-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp2-tbl th,.tgp2-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp2-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp2-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp2-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp2-tbl b{color:#8b2500;}
+.tgp2-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp2-note b{color:#8b2500;}
+@media(max-width:900px){.tgp2-fabbox{right:14px;}.tgp2-tbl{font-size:11.5px;}.tgp2-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp2-fabbox" id="tgp2Box"><button class="tgp2-btn" id="tgp2Btn" type="button" aria-label="開啟全景總表"><span class="tgp2-ic">▦</span><span class="tgp2-ls"><span class="tgp2-l1">本品 · 觀有果無果門第二</span><span class="tgp2-l2">三句推檢窮盡 · 空性骨牌總崩</span></span></button></div><div class="tgp2-modal" id="tgp2Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp2-card"><button class="tgp2-close" id="tgp2Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀有果無果門第二 · 全景總表</h3><p class="sub">十二門論·第二門｜二諦判準破定性非破緣起・先有先無先有無三句・八重四重論證・空性骨牌效應</p><table class="tgp2-tbl"><caption>一、二諦判準與三句推檢總覽（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>二諦判準</td><td>世俗諦種瓜得瓜、條件相依不破；勝義諦破的是把因果預設為<b>固定不變、各自獨立的定性實體</b>（svabhāva）</td></tr><tr><td>核心偈頌</td><td>先有則不生，先無亦不生，有無亦不生，誰當有生者？——結穴於「諸法畢竟不生」</td></tr><tr><td>三句窮盡</td><td>因中先有果、因中先無果、因中先有無果——三路涵蓋一切「定性生法」的邏輯可能，三句皆破則定性的生無立足之地</td></tr><tr><td>戰略意義</td><td>龍樹不逐一駁斥具體實有論，而以歸謬法窮盡對方所有可能立場後逐一破斥，對手退無可退</td></tr><tr><td>結穴宣告</td><td>果畢竟不生——非否定經驗世界的因果現象，而是否定勝義諦層面預設定性因果的一切結構</td></tr></tbody></table><table class="tgp2-tbl"><caption>二、假設一・二的八重與四重論證</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>假設一·八重破斥</td><td>因中先有果陷無窮過（生已復生）、生未生相違、經驗不可見（泥中瓶應可見而實不可見）、因果相壞（縷器非疊因）、墮常無常之過</td></tr><tr><td>敵者救濟與反破</td><td>以未變故不見、八因緣遮蔽（近遠根壞障同勝細）——龍樹以對稱性檢驗逐一驗證，八因緣救濟全數失敗</td></tr><tr><td>假設二·四重破斥</td><td>因中先無果則應有第二頭第三手生（無中生有荒謬）、不笮於沙（定性因果的死穴：麻沙皆無油卻只榨麻）</td></tr><tr><td>墮同疑因</td><td>敵以經驗（麻中出油）欲證底層機制，實犯循環論證謬誤——經驗無法回答為何只有甲能生乙的本體論問題</td></tr><tr><td>作作者因果皆空</td><td>龍樹自陳「我說作、作者及因果皆空」——你若破作作者因果，反而成全我法，不名為難</td></tr></tbody></table><table class="tgp2-tbl"><caption>三、假設三與空性骨牌效應</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>假設三破斥</td><td>有無性相違，如明闇苦樂去住縛解不得同處；且先有先無上文已破，二者相加仍是0+0=0，仍被破</td></tr><tr><td>理極於此</td><td>一切處推求不可得，是故果畢竟不生——先有、先無、先有無三句窮盡而三句皆不成</td></tr><tr><td>骨牌一·有為法空</td><td>果畢竟不生故，則一切有為法皆空，何以故？一切有為法皆是因是果</td></tr><tr><td>骨牌二·無為亦空</td><td>有為法空故，無為亦空——無為法僅是相對於有為法而安立的相待性概念</td></tr><tr><td>骨牌三·我亦空</td><td>有為、無為尚空，何況我耶——四張骨牌相連倒下，即法空、我空、空空</td></tr></tbody></table><p class="tgp2-note">本門所破非世俗因果，乃勝義諦所預設之「定性因果」；先有、先無、先有無三句窮盡邏輯可能而三句皆破，空性骨牌自「果畢竟不生」一路推至「我空」。龍樹此處展現的心法是<b>破定性而非破緣起</b>——世俗諦上種瓜得瓜依然成立，被打破的只是那個偷偷預埋在現象底下的自性實體假設。</p></div></div>
+<script id="wy-tgp2-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp2Btn"),BOX=document.getElementById("tgp2Box"),MODAL=document.getElementById("tgp2Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=1;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp2Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP2:END-->
 </body>
 </html>
