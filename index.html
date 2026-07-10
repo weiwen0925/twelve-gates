@@ -1132,5 +1132,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP1:END-->
+<!--WY-TGP10:BEGIN-->
+<style id="wy-tgp10-css">
+.tgp10-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp10-fabbox.show{display:block;}
+.tgp10-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp10-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp10-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp10-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp10-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp10-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp10-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp10-modal.open{display:flex;}
+.tgp10-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp10-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp10-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp10-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp10-close:hover{background:#e3d5b8;}
+.tgp10-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp10-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp10-tbl th,.tgp10-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp10-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp10-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp10-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp10-tbl b{color:#8b2500;}
+.tgp10-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp10-note b{color:#8b2500;}
+@media(max-width:900px){.tgp10-fabbox{right:14px;}.tgp10-tbl{font-size:11.5px;}.tgp10-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp10-fabbox" id="tgp10Box"><button class="tgp10-btn" id="tgp10Btn" type="button" aria-label="開啟全景總表"><span class="tgp10-ic">▦</span><span class="tgp10-ls"><span class="tgp10-l1">本品 · 觀作者門第十</span><span class="tgp10-l2">破第一因 · 自在天十難</span></span></button></div><div class="tgp10-modal" id="tgp10Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp10-card"><button class="tgp10-close" id="tgp10Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀作者門第十 · 全景總表</h3><p class="sub">十二門論·第十門｜四句推檢自他共無因作・自作主客同一悖論・自在天七維十重攻防・裸形迦葉四問無記</p><table class="tgp10-tbl"><caption>一、四句推檢的戰略地圖（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>從Who到How</td><td>破除「誰在作」的實體造作者預設，把本體論的問法轉軌為「如何生」的眾因緣和合網狀因果</td></tr><tr><td>總偈</td><td>自作及他作，共作無因作，如是不可得，是則無有苦——四句窮盡邏輯可能性，一次全部封死</td></tr><tr><td>破自作</td><td>苦自作不然，如識不能自識、指不能自觸，主客不能同一；若我是苦因則我無常，罪福斷滅、無解脫</td></tr><tr><td>破他作</td><td>眾緣不得名為他，如泥瓶泥不名為他，苦從眾緣生即眾緣性；又眾緣亦不自性有，緣不自在云何生果</td></tr><tr><td>破共作無因作</td><td>共作＝Error(自)+Error(他)不會突變為真理；無因作破壞一切因果規律，有無量過故</td></tr></tbody></table><table class="tgp10-tbl"><caption>二、自在天七維十重攻防</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>體性相違難</td><td>自在天常清淨無有苦惱，子應同父性，而眾生充滿苦惱，體性斷裂，神無能力創造苦惱物</td></tr><tr><td>動機兩難</td><td>有所須則不名自在（不圓滿）；無所須何用變化作萬物如小兒戲（無意義的亂作）</td></tr><tr><td>空間住處難</td><td>自在天造萬物時住於何處？若住餘處，餘處復誰作，如是則無窮，無窮則無因</td></tr><tr><td>苦行變化矛盾</td><td>經稱念即能作，卻又需行諸苦行方生毒蟲飛鳥人天，理論宣稱與經文實際描述自相矛盾</td></tr><tr><td>倫理情感業力難</td><td>若神所作則無罪福善惡，持戒修梵行皆無益；子應敬愛如父卻實有憎有愛，苦樂分配不均證明從業非自在所作</td></tr></tbody></table><table class="tgp10-tbl"><caption>三、裸形迦葉公案與緣起即性空</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>四問無記</td><td>裸形迦葉問苦自作耶他作耶自作他作耶無因無緣作耶，佛皆默然不答——四問窮盡而佛不落入任一邪見</td></tr><tr><td>無記真義</td><td>佛之沉默非不知答案，而是不能回答——因為提問本身預設了「苦有實體、人有神我」的錯置框架</td></tr><tr><td>從Who到How轉軌</td><td>佛雖不答，然從眾因緣生苦，破四種邪見，即是說空——沉默、邏輯、緣起三者匯歸同一中觀立場</td></tr><tr><td>三步核心公式</td><td>眾因緣生→無自性→即是空——中觀全部形而上學的縮影，若從眾因緣生則無自性，無自性即是空</td></tr><tr><td>大機用</td><td>以空義故，一切法得成——正因無實體造作者，因果業報方能運作，眾生方真正握有解脫之可能</td></tr></tbody></table><p class="tgp10-note">本門把「誰在作」這個從宗教到科學皆共享的錯誤提問徹底拆穿——自作陷主客同一悖論、他作退無可退至自在天卻遭七維十重攻防瓦解、共作無因作亦皆破。裸形迦葉四問佛皆默然，非無以應答，而是拒絕踏入「苦有實體造作者」的戲論陷阱；破除第一因絕非虛無主義，而是<b>讓因果業報、修行解脫真正得以運作的大機用</b>。</p></div></div>
+<script id="wy-tgp10-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp10Btn"),BOX=document.getElementById("tgp10Box"),MODAL=document.getElementById("tgp10Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=9;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp10Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP10:END-->
 </body>
 </html>
