@@ -1556,5 +1556,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-TGP6:END-->
+<!--WY-TGP7:BEGIN-->
+<style id="wy-tgp7-css">
+.tgp7-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.tgp7-fabbox.show{display:block;}
+.tgp7-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.tgp7-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.tgp7-ic{font-size:15px;line-height:1;color:#ecc978;}
+.tgp7-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.tgp7-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.tgp7-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.tgp7-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.tgp7-modal.open{display:flex;}
+.tgp7-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.tgp7-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.tgp7-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.tgp7-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.tgp7-close:hover{background:#e3d5b8;}
+.tgp7-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.tgp7-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.tgp7-tbl th,.tgp7-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.tgp7-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.tgp7-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.tgp7-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.tgp7-tbl b{color:#8b2500;}
+.tgp7-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.tgp7-note b{color:#8b2500;}
+@media(max-width:900px){.tgp7-fabbox{right:14px;}.tgp7-tbl{font-size:11.5px;}.tgp7-card{padding:26px 14px 16px;}}
+</style>
+<div class="tgp7-fabbox" id="tgp7Box"><button class="tgp7-btn" id="tgp7Btn" type="button" aria-label="開啟全景總表"><span class="tgp7-ic">▦</span><span class="tgp7-ls"><span class="tgp7-l1">本品 · 觀有無門第七</span><span class="tgp7-l2">相違不並存 · 體用不二破潛伏</span></span></button></div><div class="tgp7-modal" id="tgp7Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="tgp7-card"><button class="tgp7-close" id="tgp7Close" type="button" aria-label="關閉">×</button><h3>十二門論·觀有無門第七 · 全景總表</h3><p class="sub">十二門論·第七門｜有無一時非一時皆不可得・七法共生待時而發・體用不二三刀・連鎖清空眾生亦空</p><table class="tgp7-tbl"><caption>一、核心偈頌與二元封死（本門主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>核心偈頌</td><td>有無一時無，離無有亦無；不離無有有，有則應常無</td></tr><tr><td>同時封死</td><td>有無性相違，一法中不應共有，如生時無死、死時無生——同一法位不能同時具備兩種相違作用</td></tr><tr><td>非同時封死</td><td>若離無常有有生，則初無有住，常是壞故；而實有住，是故有不常無——離無常則墮永恆不變之過</td></tr><tr><td>敵宗七法共生</td><td>法生時通自體七法共生（法生住滅生生住住滅滅），「得」作為攝持力把諸相鎖在法之內</td></tr><tr><td>待時而發</td><td>具備與發用被切開——無常雖與有共生，生時潛伏未發、滅時乃發壞，企圖迴避同時並存的邏輯死角</td></tr></tbody></table><table class="tgp7-tbl"><caption>二、三刀外科手術破潛伏論</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>第一刀·相違法絕對排斥</td><td>若無常與有共生，生時有應壞、壞時有應生；但經驗中生時無壞相，共生論與經驗事實矛盾</td></tr><tr><td>第二刀·生滅住壞互斥</td><td>滅時不應有生，生時不應有滅，生滅相違故；有壞時應無住，若住則無壞，住壞相違故</td></tr><tr><td>第三刀·體用不二</td><td>能識故名識，不能識則無識相；起是生相，不起則非生相；離壞非無常相——名相必須依附當下動態作用</td></tr><tr><td>存有論批判</td><td>若生住時無常不能壞有，爾時非是無無常相耶？何用共生為？——潛伏中的屬性即等於不存在</td></tr><tr><td>共不成不共亦不成</td><td>如是有、無共不成，不共亦不成，是故有、無空——阿毘達磨最精密的設計連根崩解</td></tr></tbody></table><table class="tgp7-tbl"><caption>三、連鎖清空與三大心法</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>骨牌一·有無空</td><td>共（同時）不成加不共（異時）亦不成，有無二元皆無自性，僅是依賴因緣的假名</td></tr><tr><td>骨牌二·一切有為空</td><td>有無是一切有為法的底層代碼（生住異滅皆以有無為座標），底層二元崩解則一切有為法自然瓦解</td></tr><tr><td>骨牌三·無為亦空</td><td>無為法僅作為有為法的相對概念而存在，有為既空，無為亦失去對待與立足點</td></tr><tr><td>骨牌四·眾生亦空</td><td>我依附於五蘊（有為法）與涅槃（無為法）兩大載體，皮之不存毛將焉附，載體俱空我自然摧毀</td></tr><tr><td>三大記憶錨點</td><td>相違不並存（燈光不破自暗）·體用不二（不熱的火不叫火）·連鎖清空演算法（有無→有為→無為→我）</td></tr></tbody></table><p class="tgp7-note">本門最精彩處在於直面阿毘達磨最精巧的「七法共生·待時而發」設計，以<b>體用不二</b>一刀斷其命根——沒有當下作用即無該實體，把「無常」想像成潛伏於事物內部的定時炸彈，正是凡夫實體化錯覺的根源。由此有無二元皆空，順勢推倒有為、無為、眾生三重骨牌，完成從形上學到解脫論的過渡。</p></div></div>
+<script id="wy-tgp7-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("tgp7Btn"),BOX=document.getElementById("tgp7Box"),MODAL=document.getElementById("tgp7Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=6;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="tgp7Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-TGP7:END-->
 </body>
 </html>
